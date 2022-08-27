@@ -103,12 +103,12 @@
 		226F5D3228BA27E400F93534 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				226F5D3328BA27E400F93534 /* AppDelegate.swift */,
-				226F5D3528BA27E400F93534 /* SceneDelegate.swift */,
+				226F5D6C28BA3A4300F93534 /* Application */,
+				226F5D6A28BA39CB00F93534 /* RecipesSearch */,
+				226F5D6928BA39B800F93534 /* Models */,
+				226F5D6B28BA39F100F93534 /* Views */,
 				226F5D3728BA27E400F93534 /* ViewController.swift */,
-				226F5D3928BA27E400F93534 /* Main.storyboard */,
 				226F5D3F28BA27E700F93534 /* Assets.xcassets */,
-				226F5D4128BA27E700F93534 /* LaunchScreen.storyboard */,
 				226F5D4428BA27E700F93534 /* Info.plist */,
 				226F5D3C28BA27E400F93534 /* Reciplease.xcdatamodeld */,
 			);
@@ -130,6 +130,38 @@
 				226F5D5928BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift */,
 			);
 			path = RecipleaseUITests;
+			sourceTree = "<group>";
+		};
+		226F5D6928BA39B800F93534 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		226F5D6A28BA39CB00F93534 /* RecipesSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RecipesSearch;
+			sourceTree = "<group>";
+		};
+		226F5D6B28BA39F100F93534 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				226F5D3928BA27E400F93534 /* Main.storyboard */,
+				226F5D4128BA27E700F93534 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		226F5D6C28BA3A4300F93534 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				226F5D3328BA27E400F93534 /* AppDelegate.swift */,
+				226F5D3528BA27E400F93534 /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
