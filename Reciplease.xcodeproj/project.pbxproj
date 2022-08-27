@@ -17,6 +17,7 @@
 		226F5D4E28BA27E700F93534 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D4D28BA27E700F93534 /* RecipleaseTests.swift */; };
 		226F5D5828BA27E700F93534 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D5728BA27E700F93534 /* RecipleaseUITests.swift */; };
 		226F5D5A28BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D5928BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift */; };
+		226F5D6828BA2A8400F93534 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 226F5D6728BA2A8400F93534 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226F5D6828BA2A8400F93534 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +148,9 @@
 			dependencies = (
 			);
 			name = Reciplease;
+			packageProductDependencies = (
+				226F5D6728BA2A8400F93534 /* Alamofire */,
+			);
 			productName = Reciplease;
 			productReference = 226F5D3028BA27E400F93534 /* Reciplease.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +223,9 @@
 				Base,
 			);
 			mainGroup = 226F5D2728BA27E400F93534;
+			packageReferences = (
+				226F5D6628BA2A8400F93534 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 226F5D3128BA27E400F93534 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -449,6 +457,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +486,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +616,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		226F5D6628BA2A8400F93534 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		226F5D6728BA2A8400F93534 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 226F5D6628BA2A8400F93534 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		226F5D3C28BA27E400F93534 /* Reciplease.xcdatamodeld */ = {
