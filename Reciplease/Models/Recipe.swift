@@ -13,7 +13,8 @@ struct Recipe {
     let title: String
     let imageURL: URL
     let ingredients: [Ingredient]
-    let executionTime: TimeInterval
+    let executionTime: String
     let note: Double
+    let instructions: URL
 }
 
