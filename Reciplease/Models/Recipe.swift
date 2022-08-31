@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Ingredient = [String: Any]
+typealias Ingredient = [String: AnyHashable]
 
 struct Recipe {
     let title: String

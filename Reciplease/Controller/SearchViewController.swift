@@ -12,7 +12,7 @@ class SearchViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FetchingRecipes.getRecipes(ingredients: "chicken, avocado")
+        AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken", "avocado")
         // Do any additional setup after loading the view.
     }
     
