@@ -9,21 +9,12 @@ import UIKit
 import Alamofire
 
 class SearchViewController: UITableViewController {
-
+    var recipe: Recipe?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken", "avocado")
-        // Do any additional setup after loading the view.
+        AlamoFireFetchingRecipes.getRecipes(ingredients: "avocado") { [weak self] result in
+                        guard let self = self else { return }
+                        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
