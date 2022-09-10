@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXE-dQ-buh">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -18,7 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="search-cell" id="GTa-wp-D0t">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="searchCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GTa-wp-D0t" id="Qdh-YQ-xqt">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
@@ -83,6 +84,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Search" id="dIR-8D-sNH" userLabel="Search View Controller"/>
+                    <connections>
+                        <outlet property="imageView" destination="djf-dm-EmQ" id="41f-O9-R1w"/>
+                        <outlet property="recipeIngredientsLabel" destination="BB0-gB-YPE" id="zfl-ro-oRG"/>
+                        <outlet property="recipeNoteLabel" destination="B0z-GA-zGr" id="f9F-RO-9dV"/>
+                        <outlet property="recipeTimeLabel" destination="LbL-L9-6Al" id="oBn-fq-ZUg"/>
+                        <outlet property="recipeTitleLabel" destination="Mg8-xi-gHd" id="ifl-um-oiP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEg-Mf-wA4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

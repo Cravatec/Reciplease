@@ -9,6 +9,15 @@ import UIKit
 import Alamofire
 
 class SearchViewController: UITableViewController {
+    
+    //MARK: - IBOutlet
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var recipeTitleLabel: UILabel!
+    @IBOutlet weak var recipeTimeLabel: UILabel!
+    @IBOutlet weak var recipeNoteLabel: UILabel!
+    @IBOutlet weak var recipeIngredientsLabel: UILabel!
+    
     var recipe: Recipe?
     
     override func viewDidLoad() {
