@@ -7,14 +7,16 @@
 
 import Foundation
 
-typealias Ingredient = [String: AnyHashable]
-
 struct Recipe {
-    let title: String
-    let imageURL: URL
-    let ingredients: [Ingredient]
-    let executionTime: String
-    let note: Double
-    let instructions: URL
+    
+    // MARK: - Properties
+    
+    var title: String?
+    var subtitle: String?
+    var image: Data?
+    var like: Double?
+    var time: Double?
+    var detailIngredients: String?
+    var uri: String?
+    var url: String?
 }
-

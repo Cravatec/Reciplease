@@ -22,6 +22,8 @@
 		228465D128BF73FD004E2D18 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D028BF73FD004E2D18 /* SearchViewController.swift */; };
 		228465D328BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */; };
 		228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D528BF76AF004E2D18 /* ApiKey.swift */; };
+		22DFCD1128CA3B4400226E69 /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */; };
+		22DFCD1328CA504000226E69 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1228CA504000226E69 /* Ingredients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		228465D028BF73FD004E2D18 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireFetchingRecipes.swift; sourceTree = "<group>"; };
 		228465D528BF76AF004E2D18 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
+		22DFCD1228CA504000226E69 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				226F5D6D28BA3ADE00F93534 /* Recipe.swift */,
+				22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */,
+				22DFCD1228CA504000226E69 /* Ingredients.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +351,8 @@
 				226F5D3628BA27E400F93534 /* SceneDelegate.swift in Sources */,
 				226F5D6E28BA3ADE00F93534 /* Recipe.swift in Sources */,
 				228465D328BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift in Sources */,
+				22DFCD1328CA504000226E69 /* Ingredients.swift in Sources */,
+				22DFCD1128CA3B4400226E69 /* RecipeResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
