@@ -11,20 +11,23 @@ import SwiftUI
 
 class AlamoFireFetchingRecipes {
     
-    static func getRecipes(ingredients: String..., callback: @escaping (ResultRecipe?) -> Void) {
+    static func getRecipes(ingredients: String..., callback: @escaping (Result<ResultRecipe, Error>) -> Void) {
         let url = URL(string: "https://api.edamam.com/api/recipes/v2")
         
         let ingredientsInLine = ingredients.joined(separator: ",")
         
         let parameters: Parameters = ["q": ingredientsInLine, "maxResult": 20, "type": "public", "app_id": ApiKey.app_id, "app_key": ApiKey.app_key]
         
-        let request = AF.request(url!, method: .get, parameters: parameters).responseDecodable(of: ResultRecipe.self) { response in
-            guard let recipe = response.value else {
-                callback(nil)
+        _ = AF.request(url!, method: .get, parameters: parameters).responseDecodable(of: ResultRecipe.self) { response in
+            if let recipe = response.value {
+                callback(.success(recipe))
+                print(recipe)
                 return
             }
-            callback(recipe)
-            print(recipe)
+            if let error = response.error {
+                callback(.failure(error))
+                print(error)
+            }
         }
     }
-    }
+}
