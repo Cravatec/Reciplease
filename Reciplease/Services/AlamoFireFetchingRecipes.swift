@@ -11,6 +11,13 @@ import SwiftUI
 
 class AlamoFireFetchingRecipes {
     
+    // MARK: - Singleton pattern
+    
+    static let shared = AlamoFireFetchingRecipes()
+    init() {}
+    
+    //MARK: - Methods
+    
     static func getRecipes(ingredients: String..., callback: @escaping (Result<ResultRecipe, Error>) -> Void) {
         let url = URL(string: "https://api.edamam.com/api/recipes/v2")
         

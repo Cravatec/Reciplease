@@ -5,27 +5,102 @@
 //  Created by Sam on 31/08/2022.
 //
 
+import Foundation
 import UIKit
 
-class SearchViewController: UITableViewController {
+class SearchViewController: UIViewController {
     
     //MARK: - IBOutlet
     
-    @IBOutlet weak var recipeImageView: UIImageView!
-    @IBOutlet weak var recipeTitleLabel: UILabel!
-    @IBOutlet weak var recipeTimeLabel: UILabel!
-    @IBOutlet weak var recipeNoteLabel: UILabel!
-    @IBOutlet weak var recipeIngredientsLabel: UILabel!
+    @IBOutlet weak var ingredientTextField: UITextField!
+    @IBOutlet weak var ingredientTableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
     
     
-//TODO: - updateUI -> download image, update Labels,
+    @IBAction func addIngredient(_ sender: Any) {
+        guard let addIngredient = ingredientTextField.text else { return }
+        let ingredient = Ingredient(name: addIngredient)
+        do {
+            try IngredientService.shared.add(ingredient: ingredient)
+        } catch IngredientServiceError.alreadyExist {
+            alertMessage(message: "This ingredient is already present.")
+        } catch {
+            
+        }
+        ingredientTableView.reloadData()
+        ingredientTextField.text = ""
+        ingredientTextField.resignFirstResponder()
+        searchButton.isEnabled = true
+        print(ingredient)
+    }
+    
+    
+    @IBAction func SearchRecipes(_ sender: Any) {
+        var ingredients: [String] = []
+        for i in IngredientService.shared.ingredients {
+            ingredients += [i.name]
+        }
+        
+        AlamoFireFetchingRecipes.getRecipes(ingredients: ingredients.joined(separator: ",")) { [weak self] result in
+            guard self != nil else {
+                return }
+        }
+    }
+    
     
     var recipe: Recipe?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        AlamoFireFetchingRecipes.getRecipes(ingredients: "avocado") { [weak self] result in
-                        guard let self = self else { return }
-                        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ingredientTableView.reloadData()
+    }
+    
+    private func alertMessage(message: String) {
+        let alertVC = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+}
+// MARK: - Extension for keyboard
+
+extension SearchViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ ingredientTextField: UITextField) -> Bool {
+        ingredientTextField.resignFirstResponder()
+        return true
+    }
+}
+
+// MARK: - Extension for tableView
+
+extension SearchViewController: UITableViewDataSource {
+    
+    func numberOfSections(in ingredientTableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ ingredientTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return IngredientService.shared.ingredients.count
+    }
+    
+    func tableView(_ ingredientTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ingredientTableView.dequeueReusableCell(withIdentifier: "IngredientsTable", for: indexPath)
+        let ingredient = IngredientService.shared.ingredients[indexPath.row]
+        cell.textLabel?.text = ingredient.name
+        return cell
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    
+    func tableView(_ ingredientTableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        IngredientService.shared.remove(at: indexPath.row)
+        ingredientTableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
