@@ -18,7 +18,7 @@ class AlamoFireFetchingRecipes {
     
     //MARK: - Methods
     
-    static func getRecipes(ingredients: String..., callback: @escaping (Result<ResultRecipe, Error>) -> Void) {
+    static func getRecipes(ingredients: String..., callback: @escaping (Result<[Recipe], Error>) -> Void) {
         let url = URL(string: "https://api.edamam.com/api/recipes/v2")
         
         let ingredientsInLine = ingredients.joined(separator: ",")
@@ -26,9 +26,12 @@ class AlamoFireFetchingRecipes {
         let parameters: Parameters = ["q": ingredientsInLine, "maxResult": 20, "type": "public", "app_id": ApiKey.app_id, "app_key": ApiKey.app_key]
         
         _ = AF.request(url!, method: .get, parameters: parameters).responseDecodable(of: ResultRecipe.self) { response in
-            if let recipe = response.value {
-                callback(.success(recipe))
-                print(recipe)
+            if let resultRecipe = response.value {
+                let recipes = resultRecipe.hits.map { hit in
+                    Recipe(hit: hit)
+                }
+                callback(.success(recipes))
+                print(recipes)
                 return
             }
             if let error = response.error {
@@ -36,5 +39,16 @@ class AlamoFireFetchingRecipes {
                 print(error)
             }
         }
+    }
+    
+}
+
+extension Recipe {
+    init(hit: Hit) {
+        title = hit.recipe.label
+        //        note = hit.recipe.yield
+        time = hit.recipe.totalTime
+        //        detailIngredients = hit.recipe.ingredients
+        //        image = hit.recipe.image
     }
 }
