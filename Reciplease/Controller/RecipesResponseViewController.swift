@@ -8,20 +8,50 @@
 import Foundation
 import UIKit
 
+protocol SearchViewControllerDelegate {
+    func didFinishLoadingRecipes( _ recipes: [Recipe])
+}
+
 class RecipesResponseViewController: UIViewController {
 
+    var recipes = [Recipe]()
+    
+    
     @IBOutlet weak var recipesResponseTableView: UITableView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
     }
     
 }
 
-class RecipesResponseTableViewCell: UITableViewCell {
-    @IBOutlet weak var recipeTitleLabel: UILabel!
-    @IBOutlet weak var recipeTimeLabel: UILabel!
-    @IBOutlet weak var recipeNoteLabel: UILabel!
-    @IBOutlet weak var recipeIngredientsLabel: UILabel!
-    @IBOutlet weak var recipeResponseTableView: UITableView!
+extension RecipesResponseViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipesResponseTableViewCell
+        let recipe = recipes[indexPath.row]
+        cell?.recipeTitleLabel.text = recipe.title
+        cell?.recipeTimeLabel.text = "\(String(describing: recipe.time))"
+        cell?.recipeNoteLabel.text  = "\(String(describing: recipe.like)) ❤️"
+        cell?.recipeIngredientsLabel.text = recipe.detailIngredients
+//        cell?.recipeImage = 
+        return cell ?? UITableViewCell()
+    }
+
+}
+
+extension RecipesResponseViewController: SearchViewControllerDelegate {
+    func didFinishLoadingRecipes(_ recipes: [Recipe]) {
+        self.recipes = recipes
+        recipesResponseTableView.reloadData()
+        activityIndicator.stopAnimating()
+    }
+    
+    
 }
