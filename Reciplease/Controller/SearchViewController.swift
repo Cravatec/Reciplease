@@ -17,6 +17,29 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     
+    var delegate: SearchViewControllerDelegate?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ingredientTableView.reloadData()
+    }
+    
+    @IBAction func SearchRecipes(_ sender: Any) {
+        //        var ingredients: [String] = []
+        //        for i in IngredientService.shared.ingredients {
+        //            ingredients += [i.name]
+        //        }
+        let ingredients = IngredientService.shared.ingredients.map{$0.name}
+        
+        AlamoFireFetchingRecipes.getRecipes(ingredients: ingredients.joined(separator: ",")) { [weak self] result in
+            if case .success(let recipes) = result {
+                self?.delegate?.didFinishLoadingRecipes(recipes)
+            }
+        }
+    }
     
     @IBAction func addIngredient(_ sender: Any) {
         guard let addIngredient = ingredientTextField.text else { return }
@@ -36,35 +59,18 @@ class SearchViewController: UIViewController {
     }
     
     
-    @IBAction func SearchRecipes(_ sender: Any) {
-        var ingredients: [String] = []
-        for i in IngredientService.shared.ingredients {
-            ingredients += [i.name]
-        }
-        
-        AlamoFireFetchingRecipes.getRecipes(ingredients: ingredients.joined(separator: ",")) { [weak self] result in
-            guard self != nil else {
-                return }
-        }
-    }
-    
-    
-    var recipe: Recipe?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        ingredientTableView.reloadData()
-    }
-    
     private func alertMessage(message: String) {
         let alertVC = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResults" {
+            let recipesResultViewController = segue.destination as? RecipesResponseViewController
+            self.delegate = recipesResultViewController
+        }
+    }
 }
 // MARK: - Extension for keyboard
 
@@ -91,7 +97,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ ingredientTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ingredientTableView.dequeueReusableCell(withIdentifier: "IngredientsTable", for: indexPath)
         let ingredient = IngredientService.shared.ingredients[indexPath.row]
-        cell.textLabel?.text = ingredient.name
+        cell.textLabel?.text = "✅\(ingredient.name)"
         return cell
     }
 }
