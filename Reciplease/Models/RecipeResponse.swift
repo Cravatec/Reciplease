@@ -30,9 +30,9 @@ struct Hit: Decodable {
 struct APIRecipe: Decodable {
     let uri: String
     let label: String
-    let image: String
+    let image: URL
     let images: Images
-    let url: String
+    let url: URL
     let yield: Double
     let ingredientLines: [String]
     let ingredients: [RecipeIngredients]

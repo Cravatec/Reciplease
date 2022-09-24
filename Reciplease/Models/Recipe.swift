@@ -13,10 +13,10 @@ struct Recipe {
     
     var title: String?
     var subtitle: String?
-    var image: Data?
+    var image: URL?
     var like: Double?
     var time: Double?
     var detailIngredients: String?
     var uri: String?
-    var url: String?
+    var url: URL?
 }
