@@ -46,9 +46,12 @@ class AlamoFireFetchingRecipes {
 extension Recipe {
     init(hit: Hit) {
         title = hit.recipe.label
-        //        note = hit.recipe.yield
         time = hit.recipe.totalTime
+        like = hit.recipe.yield
+        detailIngredients = String(describing:hit.recipe.ingredientLines)
+        //        note = hit.recipe.yield
         //        detailIngredients = hit.recipe.ingredients
-        //        image = hit.recipe.image
+                image = hit.recipe.image
+        
     }
 }
