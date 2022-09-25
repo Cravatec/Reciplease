@@ -24,3 +24,13 @@ extension UIImageView {
         }
     }
 }
+extension UIView
+{
+    func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat)
+    {
+        clipsToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.borderWidth = borderWidth
+        layer.borderColor = CGColor.init(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+}

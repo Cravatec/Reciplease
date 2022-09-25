@@ -26,8 +26,7 @@
 		228465D328BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */; };
 		228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D528BF76AF004E2D18 /* ApiKey.swift */; };
 		228648B028D77E6300C41EDD /* RecipesResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228648AF28D77E6300C41EDD /* RecipesResponseTableViewCell.swift */; };
-		22903D5928DCDD0B0059AAA3 /* defaultImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22903D5828DCDD0B0059AAA3 /* defaultImage.jpg */; };
-		22903D5B28DCDE4D0059AAA3 /* Edamame.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22903D5A28DCDE4D0059AAA3 /* Edamame.jpg */; };
+		22903D5B28DCDE4D0059AAA3 /* default_Image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22903D5A28DCDE4D0059AAA3 /* default_Image.jpg */; };
 		22DFCD1128CA3B4400226E69 /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */; };
 		22DFCD1328CA504000226E69 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1228CA504000226E69 /* Ingredients.swift */; };
 /* End PBXBuildFile section */
@@ -72,8 +71,7 @@
 		228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireFetchingRecipes.swift; sourceTree = "<group>"; };
 		228465D528BF76AF004E2D18 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		228648AF28D77E6300C41EDD /* RecipesResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesResponseTableViewCell.swift; sourceTree = "<group>"; };
-		22903D5828DCDD0B0059AAA3 /* defaultImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = defaultImage.jpg; sourceTree = "<group>"; };
-		22903D5A28DCDE4D0059AAA3 /* Edamame.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Edamame.jpg; sourceTree = "<group>"; };
+		22903D5A28DCDE4D0059AAA3 /* default_Image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_Image.jpg; sourceTree = "<group>"; };
 		22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
 		22DFCD1228CA504000226E69 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +105,7 @@
 		225AD8DE28DC662600A6AF1D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				22903D5828DCDD0B0059AAA3 /* defaultImage.jpg */,
-				22903D5A28DCDE4D0059AAA3 /* Edamame.jpg */,
+				22903D5A28DCDE4D0059AAA3 /* default_Image.jpg */,
 				225AD8DF28DC665300A6AF1D /* UIImageView_Extension.swift */,
 			);
 			path = Extensions;
@@ -345,8 +342,7 @@
 				226F5D4328BA27E700F93534 /* LaunchScreen.storyboard in Resources */,
 				226F5D4028BA27E700F93534 /* Assets.xcassets in Resources */,
 				226F5D3B28BA27E400F93534 /* Main.storyboard in Resources */,
-				22903D5928DCDD0B0059AAA3 /* defaultImage.jpg in Resources */,
-				22903D5B28DCDE4D0059AAA3 /* Edamame.jpg in Resources */,
+				22903D5B28DCDE4D0059AAA3 /* default_Image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

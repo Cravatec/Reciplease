@@ -16,11 +16,13 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var clearButton: UIButton!
     
     var delegate: SearchViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchButton.isEnabled = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,10 +30,6 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func SearchRecipes(_ sender: Any) {
-        //        var ingredients: [String] = []
-        //        for i in IngredientService.shared.ingredients {
-        //            ingredients += [i.name]
-        //        }
         let ingredients = IngredientService.shared.ingredients.map{$0.name}
         
         AlamoFireFetchingRecipes.getRecipes(ingredients: ingredients.joined(separator: ",")) { [weak self] result in
@@ -55,8 +53,14 @@ class SearchViewController: UIViewController {
         ingredientTextField.text = ""
         ingredientTextField.resignFirstResponder()
         searchButton.isEnabled = true
-        print(ingredient)
     }
+    
+    @IBAction func clearActionButton(_ sender: Any) {
+        IngredientService.shared.clear()
+        ingredientTableView.reloadData()
+        searchButton.isEnabled = false
+    }
+    
     
     
     private func alertMessage(message: String) {

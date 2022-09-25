@@ -13,7 +13,7 @@ protocol SearchViewControllerDelegate {
 }
 
 class RecipesResponseViewController: UIViewController {
-
+    
     var recipes = [Recipe]()
     
     
@@ -36,15 +36,14 @@ extension RecipesResponseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipesResponseTableViewCell
         let recipe = recipes[indexPath.row]
-        cell?.recipeImage.image = UIImage(named: "Edamame.jpg")
+        cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
         if let url = recipe.image {
             cell?.recipeImage.imageLoadingFromURL(url: url)
         }
         cell?.recipeTitleLabel.text = recipe.title!
-        cell?.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
+        cell!.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
         cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
         cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
-      //  cell?.recipeImage.imageLoadingFromURL(url: recipe.image!)
         return cell ?? UITableViewCell()
     }
 }
@@ -55,6 +54,4 @@ extension RecipesResponseViewController: SearchViewControllerDelegate {
         recipesResponseTableView.reloadData()
         activityIndicator.stopAnimating()
     }
-    
-    
 }

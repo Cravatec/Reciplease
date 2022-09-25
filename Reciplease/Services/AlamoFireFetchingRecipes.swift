@@ -31,7 +31,7 @@ class AlamoFireFetchingRecipes {
                     Recipe(hit: hit)
                 }
                 callback(.success(recipes))
-                print(recipes)
+                //   print(recipes)
                 return
             }
             if let error = response.error {
@@ -49,9 +49,7 @@ extension Recipe {
         time = hit.recipe.totalTime
         like = hit.recipe.yield
         detailIngredients = String(describing:hit.recipe.ingredientLines)
-        //        note = hit.recipe.yield
-        //        detailIngredients = hit.recipe.ingredients
-                image = hit.recipe.image
+        image = hit.recipe.image
         
     }
 }

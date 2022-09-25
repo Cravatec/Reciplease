@@ -14,15 +14,18 @@ class RecipesResponseTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeIngredientsLabel: UILabel!
     @IBOutlet weak var recipeResponseTableView: UITableView!
     @IBOutlet weak var recipeImage: UIImageView!
+    @IBOutlet weak var timeLikeView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        recipeImage.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
+        timeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
         // Initialization code
     }
     
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     
