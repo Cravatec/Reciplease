@@ -8,6 +8,7 @@
 import UIKit
 
 class RecipesResponseTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeTimeLabel: UILabel!
     @IBOutlet weak var recipeNoteLabel: UILabel!
@@ -24,9 +25,9 @@ class RecipesResponseTableViewCell: UITableViewCell {
     }
     
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//        // Configure the view for the selected state
+//    }
     
 }

@@ -15,7 +15,7 @@ protocol SearchViewControllerDelegate {
 class RecipesResponseViewController: UIViewController {
     
     var recipes = [Recipe]()
-    
+    private var selectedRecipe: Recipe?
     
     @IBOutlet weak var recipesResponseTableView: UITableView!
     
@@ -26,6 +26,12 @@ class RecipesResponseViewController: UIViewController {
         activityIndicator.startAnimating()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToRecipe", let recipe = selectedRecipe {
+            guard let RecipeViewController = segue.destination as? RecipeViewController else { return }
+            RecipeViewController.recipe = recipe
+        }
+    }
 }
 
 extension RecipesResponseViewController: UITableViewDataSource {
@@ -53,5 +59,13 @@ extension RecipesResponseViewController: SearchViewControllerDelegate {
         self.recipes = recipes
         recipesResponseTableView.reloadData()
         activityIndicator.stopAnimating()
+    }
+}
+
+extension RecipesResponseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRecipe = recipes[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "segueToRecipe", sender: self)
     }
 }
