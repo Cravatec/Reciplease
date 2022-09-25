@@ -12,7 +12,6 @@
 		225AD8E028DC665300A6AF1D /* UIImageView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225AD8DF28DC665300A6AF1D /* UIImageView_Extension.swift */; };
 		226F5D3428BA27E400F93534 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D3328BA27E400F93534 /* AppDelegate.swift */; };
 		226F5D3628BA27E400F93534 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D3528BA27E400F93534 /* SceneDelegate.swift */; };
-		226F5D3828BA27E400F93534 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D3728BA27E400F93534 /* ViewController.swift */; };
 		226F5D3B28BA27E400F93534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F5D3928BA27E400F93534 /* Main.storyboard */; };
 		226F5D3E28BA27E400F93534 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D3C28BA27E400F93534 /* Reciplease.xcdatamodeld */; };
 		226F5D4028BA27E700F93534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F5D3F28BA27E700F93534 /* Assets.xcassets */; };
@@ -56,7 +55,6 @@
 		226F5D3028BA27E400F93534 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F5D3328BA27E400F93534 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		226F5D3528BA27E400F93534 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		226F5D3728BA27E400F93534 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		226F5D3A28BA27E400F93534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		226F5D3D28BA27E400F93534 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		226F5D3F28BA27E700F93534 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 		228465CD28BF6ED3004E2D18 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				226F5D3728BA27E400F93534 /* ViewController.swift */,
 				228465D028BF73FD004E2D18 /* SearchViewController.swift */,
 				223BFCA828D343DC00E7A255 /* RecipesResponseViewController.swift */,
 				228648AF28D77E6300C41EDD /* RecipesResponseTableViewCell.swift */,
@@ -374,7 +371,6 @@
 				226F5D3E28BA27E400F93534 /* Reciplease.xcdatamodeld in Sources */,
 				225AD8E028DC665300A6AF1D /* UIImageView_Extension.swift in Sources */,
 				228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */,
-				226F5D3828BA27E400F93534 /* ViewController.swift in Sources */,
 				226F5D3428BA27E400F93534 /* AppDelegate.swift in Sources */,
 				226F5D3628BA27E400F93534 /* SceneDelegate.swift in Sources */,
 				226F5D6E28BA3ADE00F93534 /* Recipe.swift in Sources */,
