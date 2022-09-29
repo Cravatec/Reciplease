@@ -29,6 +29,7 @@ class RecipeViewController: UIViewController {
         if let url = recipe.image {
             recipeImageView.imageLoadingFromURL(url: url)
         }
+        
     }
 
 }

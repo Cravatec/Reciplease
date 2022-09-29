@@ -21,6 +21,7 @@
 		226F5D5A28BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D5928BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift */; };
 		226F5D6828BA2A8400F93534 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 226F5D6728BA2A8400F93534 /* Alamofire */; };
 		226F5D6E28BA3ADE00F93534 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D6D28BA3ADE00F93534 /* Recipe.swift */; };
+		227363FD28E0C73B00F7F61F /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227363FC28E0C73B00F7F61F /* StorageService.swift */; };
 		228465D128BF73FD004E2D18 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D028BF73FD004E2D18 /* SearchViewController.swift */; };
 		228465D328BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */; };
 		228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D528BF76AF004E2D18 /* ApiKey.swift */; };
@@ -66,6 +67,7 @@
 		226F5D5728BA27E700F93534 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
 		226F5D5928BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		226F5D6D28BA3ADE00F93534 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		227363FC28E0C73B00F7F61F /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		228465D028BF73FD004E2D18 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireFetchingRecipes.swift; sourceTree = "<group>"; };
 		228465D528BF76AF004E2D18 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */,
+				227363FC28E0C73B00F7F61F /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				223BFCA928D343DC00E7A255 /* RecipesResponseViewController.swift in Sources */,
 				228465D328BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift in Sources */,
 				22DFCD1328CA504000226E69 /* Ingredients.swift in Sources */,
+				227363FD28E0C73B00F7F61F /* StorageService.swift in Sources */,
 				223BFCA728D331B800E7A255 /* IngredientService.swift in Sources */,
 				228648B028D77E6300C41EDD /* RecipesResponseTableViewCell.swift in Sources */,
 				22DFCD1128CA3B4400226E69 /* RecipeResponse.swift in Sources */,

@@ -16,9 +16,9 @@ class RecipesResponseViewController: UIViewController {
     
     var recipes = [Recipe]()
     private var selectedRecipe: Recipe?
+  //  private var service: RecipeStorageService
     
     @IBOutlet weak var recipesResponseTableView: UITableView!
-    
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -32,6 +32,14 @@ class RecipesResponseViewController: UIViewController {
             RecipeViewController.recipe = recipe
         }
     }
+    
+    @IBAction func favoriteAction(_ sender: Any) {
+        //TODO: Favorite in CoreData
+    
+    }
+    
+    
+    
 }
 
 extension RecipesResponseViewController: UITableViewDataSource {
