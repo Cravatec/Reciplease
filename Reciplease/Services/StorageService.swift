@@ -7,24 +7,25 @@
 
 import Foundation
 import CoreData
+//
+//protocol RecipeStorageService {
+//    func save(recipe: Recipe)
+//
+//    func retrieve() -> [Recipe]
+//}
+//
+//class CoreDataRecipeStorage: RecipeStorageService {
+//
+// //   var coreData
+//
+//    func save(recipe: Recipe) {
+//
+//    }
+//
+//    func retrieve() -> [Recipe] {
+//        return []
+//    }
+//
+//}
 
-protocol RecipeStorageService {
-    func save(recipe: Recipe)
-
-    func retrieve() -> [Recipe]
-}
-
-class CoreDataRecipeStorage: RecipeStorageService {
-    
- //   var coreData
-    
-    func save(recipe: Recipe) {
-        
-    }
-    
-    func retrieve() -> [Recipe] {
-        return []
-    }
-    
-}
 
