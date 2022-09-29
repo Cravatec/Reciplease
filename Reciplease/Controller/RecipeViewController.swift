@@ -31,6 +31,9 @@ class RecipeViewController: UIViewController {
         }
         
     }
+    @IBAction func getDirections(_ sender: Any) {
+        UIApplication.shared.open(selectedRecipe.url)
+    }
 }
 // MARK: - TableViewDataSource
 

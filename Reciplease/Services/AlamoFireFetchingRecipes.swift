@@ -51,5 +51,6 @@ extension Recipe {
         detailIngredients = String(describing:hit.recipe.ingredientLines)
         image = hit.recipe.image
         ingredients = hit.recipe.ingredients
+        url = hit.recipe.url
     }
 }
