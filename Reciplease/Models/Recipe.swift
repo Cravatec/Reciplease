@@ -19,4 +19,5 @@ struct Recipe {
     var detailIngredients: String?
     var uri: String?
     var url: URL?
+    var ingredients: [RecipeIngredients]?
 }

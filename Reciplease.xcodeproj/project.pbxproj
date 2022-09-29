@@ -30,6 +30,7 @@
 		2292884328E0A3470001691B /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292884228E0A3470001691B /* RecipeViewController.swift */; };
 		22DFCD1128CA3B4400226E69 /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */; };
 		22DFCD1328CA504000226E69 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1228CA504000226E69 /* Ingredients.swift */; };
+		22FEC08528E5D54E0084F175 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FEC08428E5D54E0084F175 /* IngredientTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		2292884228E0A3470001691B /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
 		22DFCD1228CA504000226E69 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		22FEC08428E5D54E0084F175 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				223BFCA828D343DC00E7A255 /* RecipesResponseViewController.swift */,
 				228648AF28D77E6300C41EDD /* RecipesResponseTableViewCell.swift */,
 				2292884228E0A3470001691B /* RecipeViewController.swift */,
+				22FEC08428E5D54E0084F175 /* IngredientTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				226F5D3E28BA27E400F93534 /* Reciplease.xcdatamodeld in Sources */,
 				225AD8E028DC665300A6AF1D /* UIImageView_Extension.swift in Sources */,
 				228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */,
+				22FEC08528E5D54E0084F175 /* IngredientTableViewCell.swift in Sources */,
 				226F5D3428BA27E400F93534 /* AppDelegate.swift in Sources */,
 				226F5D3628BA27E400F93534 /* SceneDelegate.swift in Sources */,
 				226F5D6E28BA3ADE00F93534 /* Recipe.swift in Sources */,

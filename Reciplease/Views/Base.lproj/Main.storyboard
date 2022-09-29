@@ -5,6 +5,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -283,13 +284,14 @@
                                                         <constraint firstItem="r1O-hL-9cl" firstAttribute="centerX" secondItem="87G-IL-9tn" secondAttribute="centerX" id="zFR-EP-6Vs"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-VQ-6Gv">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-VQ-6Gv">
                                                     <rect key="frame" x="259.5" y="183" width="50.5" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="Cms-Jg-nsW"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                                         <color key="baseForegroundColor" red="0.81960784310000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </buttonConfiguration>
                                                     <connections>
@@ -360,8 +362,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7jd-Y0-3IW">
-                                <rect key="frame" x="10" y="44" width="300" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7jd-Y0-3IW">
+                                <rect key="frame" x="0.0" y="44" width="320" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="ret-RV-aes"/>
                                 </constraints>
@@ -399,31 +401,109 @@
                                     <constraint firstItem="42Y-ss-FkF" firstAttribute="centerY" secondItem="BXd-n0-aap" secondAttribute="centerY" id="o3i-pc-36Y"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-U3-Mpg" userLabel="RecipeLabel">
-                                <rect key="frame" x="139.5" y="249" width="41.5" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-U3-Mpg" userLabel="RecipeLabel">
+                                <rect key="frame" x="5" y="249" width="310" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JhL-Mc-fDu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XLD-AQ-V8I">
+                                <rect key="frame" x="10" y="289" width="300" height="220"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="25" id="V3d-DO-kb7">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeIngredientCell" rowHeight="50" id="Qpu-Yr-DeJ" customClass="IngredientTableViewCell" customModule="Reciplease" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71" width="300" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qpu-Yr-DeJ" id="9b2-cA-9Uv">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gC3-ZQ-NTn" userLabel="Ingredient Image">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="CwA-4r-vYg"/>
+                                                        <constraint firstAttribute="height" constant="50" id="DkK-p8-Ug4"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="560-GR-Cob" userLabel="Ingredient Label">
+                                                    <rect key="frame" x="65" y="15" width="214" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gC3-ZQ-NTn" firstAttribute="leading" secondItem="9b2-cA-9Uv" secondAttribute="leading" id="0gc-L8-zEq"/>
+                                                <constraint firstItem="560-GR-Cob" firstAttribute="centerY" secondItem="gC3-ZQ-NTn" secondAttribute="centerY" id="9qd-Dt-7Xa"/>
+                                                <constraint firstItem="gC3-ZQ-NTn" firstAttribute="top" secondItem="9b2-cA-9Uv" secondAttribute="top" id="Tjj-W5-gbW"/>
+                                                <constraint firstItem="560-GR-Cob" firstAttribute="leading" secondItem="gC3-ZQ-NTn" secondAttribute="trailing" constant="15" id="W9g-b2-Y60"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="560-GR-Cob" secondAttribute="trailing" constant="5" id="WWv-15-0T1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ingredientImage" destination="gC3-ZQ-NTn" id="hXk-0w-2M0"/>
+                                            <outlet property="ingredientLabel" destination="560-GR-Cob" id="zsv-83-mAg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yYf-sR-hoI" id="oD2-tZ-Y3W"/>
+                                    <outlet property="delegate" destination="yYf-sR-hoI" id="ZLw-0H-hZY"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZ4-dL-qMw" userLabel="Favorite Button">
+                                <rect key="frame" x="269.5" y="227" width="50.5" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="cia-W7-nfR"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50.5" id="kRq-86-LcS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                    <color key="baseForegroundColor" red="0.81960784310000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="favoriteAction:" destination="6vO-Lb-nlS" eventType="touchUpInside" id="rIe-ri-9hm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KCE-sK-0lu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="KCE-sK-0lu" firstAttribute="trailing" secondItem="BXd-n0-aap" secondAttribute="trailing" constant="10" id="3bB-IA-RfB"/>
+                            <constraint firstItem="KCE-sK-0lu" firstAttribute="bottom" secondItem="XLD-AQ-V8I" secondAttribute="bottom" constant="10" id="3cy-KM-cgI"/>
                             <constraint firstItem="bvh-U3-Mpg" firstAttribute="top" secondItem="7jd-Y0-3IW" secondAttribute="bottom" constant="5" id="7oU-CW-tjt"/>
                             <constraint firstItem="BXd-n0-aap" firstAttribute="top" secondItem="7jd-Y0-3IW" secondAttribute="top" constant="10" id="897-9u-etn"/>
+                            <constraint firstItem="XLD-AQ-V8I" firstAttribute="leading" secondItem="KCE-sK-0lu" secondAttribute="leading" constant="10" id="GD4-yZ-fDx"/>
                             <constraint firstItem="bvh-U3-Mpg" firstAttribute="centerX" secondItem="rRS-Jc-t5c" secondAttribute="centerX" id="HNC-E2-PYb"/>
+                            <constraint firstItem="KCE-sK-0lu" firstAttribute="trailing" secondItem="rZ4-dL-qMw" secondAttribute="trailing" id="Ia1-PN-ZlQ"/>
+                            <constraint firstItem="XLD-AQ-V8I" firstAttribute="top" secondItem="bvh-U3-Mpg" secondAttribute="bottom" constant="10" id="IuB-Ys-cIn"/>
+                            <constraint firstItem="rZ4-dL-qMw" firstAttribute="leading" secondItem="KCE-sK-0lu" secondAttribute="leading" constant="269.5" id="KLk-Kg-aEb"/>
+                            <constraint firstItem="rZ4-dL-qMw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7jd-Y0-3IW" secondAttribute="trailing" id="Kaj-Zw-cgj"/>
+                            <constraint firstItem="rZ4-dL-qMw" firstAttribute="centerY" secondItem="7jd-Y0-3IW" secondAttribute="bottom" id="Q1e-an-nah"/>
+                            <constraint firstItem="KCE-sK-0lu" firstAttribute="trailing" secondItem="bvh-U3-Mpg" secondAttribute="trailing" constant="5" id="ShI-8u-eOz"/>
                             <constraint firstItem="7jd-Y0-3IW" firstAttribute="top" secondItem="KCE-sK-0lu" secondAttribute="top" id="VEZ-hO-M1Z"/>
-                            <constraint firstItem="KCE-sK-0lu" firstAttribute="trailing" secondItem="7jd-Y0-3IW" secondAttribute="trailing" constant="10" id="Yfg-sd-rsr"/>
-                            <constraint firstItem="7jd-Y0-3IW" firstAttribute="leading" secondItem="KCE-sK-0lu" secondAttribute="leading" constant="10" id="emR-5E-E0D"/>
+                            <constraint firstItem="KCE-sK-0lu" firstAttribute="trailing" secondItem="7jd-Y0-3IW" secondAttribute="trailing" id="Yfg-sd-rsr"/>
+                            <constraint firstItem="7jd-Y0-3IW" firstAttribute="leading" secondItem="KCE-sK-0lu" secondAttribute="leading" id="emR-5E-E0D"/>
+                            <constraint firstItem="bvh-U3-Mpg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KCE-sK-0lu" secondAttribute="leading" id="h30-xS-8aT"/>
+                            <constraint firstItem="KCE-sK-0lu" firstAttribute="trailing" secondItem="XLD-AQ-V8I" secondAttribute="trailing" constant="10" id="wXJ-Us-VpF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p32-BQ-vw3"/>
                     <connections>
+                        <outlet property="recipeFavoriteButton" destination="rZ4-dL-qMw" id="DsO-rj-ee4"/>
                         <outlet property="recipeImageView" destination="7jd-Y0-3IW" id="9OC-80-P8F"/>
+                        <outlet property="recipeIngredientTable" destination="XLD-AQ-V8I" id="POH-iv-phP"/>
                         <outlet property="recipeLikeLabel" destination="uaQ-kV-cT9" id="Xhr-lh-acG"/>
                         <outlet property="recipeTimeLabel" destination="Bia-Mp-SCD" id="ie8-Z4-uZd"/>
                         <outlet property="recipeTimeLikeView" destination="BXd-n0-aap" id="ga1-sg-geh"/>

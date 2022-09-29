@@ -43,19 +43,19 @@ struct APIRecipe: Decodable {
 
 struct RecipeIngredients: Decodable {
     let text: String
-    let quantity: Double
-    let measure: String?
-    let food: String
-    let weight: Double
-    let foodCategory: String?
-    let foodID: String
+//    let quantity: Double
+//    let measure: String?
+//    let food: String
+//    let weight: Double
+//    let foodCategory: String?
+//    let foodID: String
     let image: String?
     
-    enum CodingKeys: String, CodingKey {
-        case text, quantity, measure, food, weight, foodCategory
-        case foodID = "foodId"
-        case image
-    }
+//    enum CodingKeys: String, CodingKey {
+//        case text, quantity, measure, food, weight, foodCategory
+//        case foodID = "foodId"
+//        case image
+//    }
 }
 
 // MARK: - Images
@@ -63,7 +63,7 @@ struct RecipeIngredients: Decodable {
 struct Images: Decodable {
     let thumbnail, small, regular: Large
     let large: Large?
-    
+
     enum CodingKeys: String, CodingKey {
         case thumbnail = "THUMBNAIL"
         case small = "SMALL"
@@ -86,7 +86,7 @@ struct RecipeDataModel: Decodable {
     let executionTime: String
     let note: Double
     let instructions: String
-    
+
     enum CodingKeys: CodingKey {
         case title
         case imageURL

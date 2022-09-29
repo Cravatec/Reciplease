@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol SearchViewControllerDelegate {
     func didFinishLoadingRecipes( _ recipes: [Recipe])
@@ -29,13 +30,12 @@ class RecipesResponseViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToRecipe", let recipe = selectedRecipe {
             guard let RecipeViewController = segue.destination as? RecipeViewController else { return }
-            RecipeViewController.recipe = recipe
+            RecipeViewController.selectedRecipe = recipe
         }
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
         //TODO: Favorite in CoreData
-    
     }
     
     
