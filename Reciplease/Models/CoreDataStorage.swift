@@ -8,4 +8,6 @@
 import Foundation
 import CoreData
 
-
+class CoreDataStorage : NSManagedObject {
+    
+}
