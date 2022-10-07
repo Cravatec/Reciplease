@@ -17,7 +17,7 @@ class RecipesResponseViewController: UIViewController {
     
     var recipes = [Recipe]()
     private var selectedRecipe: Recipe?
-  //  private var service: RecipeStorageService
+    private let service: RecipeStorageService = CoreDataService()
     
     @IBOutlet weak var recipesResponseTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -35,7 +35,9 @@ class RecipesResponseViewController: UIViewController {
     }
     
     @IBAction func favoriteAction(_ sender: Any) {
-        //TODO: Favorite in CoreData
+        if let selectedRecipe = selectedRecipe {
+        service.save(recipe: selectedRecipe)
+        }
     }
     
     
@@ -50,6 +52,7 @@ extension RecipesResponseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipesResponseTableViewCell
         let recipe = recipes[indexPath.row]
+        selectedRecipe = recipe
         cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
         if let url = recipe.image {
             cell?.recipeImage.imageLoadingFromURL(url: url)
