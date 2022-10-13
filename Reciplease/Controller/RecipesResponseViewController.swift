@@ -39,9 +39,6 @@ class RecipesResponseViewController: UIViewController {
         service.save(recipe: selectedRecipe)
         }
     }
-    
-    
-    
 }
 
 extension RecipesResponseViewController: UITableViewDataSource {

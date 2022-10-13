@@ -14,7 +14,7 @@ class CoreDataStack {
     static let shared = CoreDataStack()
     
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
-    private lazy var context = appDelegate?.persistentContainer.viewContext
+    lazy var context = appDelegate?.persistentContainer.viewContext
     
     func retrieve() -> [Recipe] {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataRecipe")
@@ -26,7 +26,7 @@ class CoreDataStack {
             for data in result  {
                 let title = data.value(forKey: "title") as? String
                 let image = data.value(forKey: "image") as? String
-               // let ingredients = data.value(forKey: "ingredients") as? String
+                // let ingredients = data.value(forKey: "ingredients") as? String
                 let like = data.value(forKey: "like") as? Double
                 let time = data.value(forKey: "time") as? Double
                 let url = data.value(forKey: "url") as? String
@@ -56,7 +56,7 @@ class CoreDataStack {
         let favoriteRecipe = NSEntityDescription.insertNewObject(forEntityName: "CoreDataRecipe", into: context!)
         favoriteRecipe.setValue(recipe.title, forKey: "title")
         favoriteRecipe.setValue(recipe.image?.absoluteString, forKey: "image")
-      //  favoriteRecipe.setValue(recipe.ingredients, forKey: "ingredients")
+        //  favoriteRecipe.setValue(recipe.ingredients, forKey: "ingredients")
         favoriteRecipe.setValue(recipe.like, forKey: "like")
         favoriteRecipe.setValue(recipe.time, forKey: "time")
         favoriteRecipe.setValue(recipe.url.absoluteString, forKey: "url")

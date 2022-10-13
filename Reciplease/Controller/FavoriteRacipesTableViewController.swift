@@ -19,6 +19,11 @@ class FavoriteRacipesTableViewController: UITableViewController {
         coreDataService.retrieve()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoriteTableView.reloadData()
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,17 +35,20 @@ class FavoriteRacipesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favorites", for: indexPath) as? RecipesResponseTableViewCell
-        let recipe = coreDataService.retrieve()[indexPath.row]
-        cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
-        if let url = recipe.image {
-           cell?.recipeImage.imageLoadingFromURL(url: url)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favorites", for: indexPath) as? RecipesResponseTableViewCell else {
+            return UITableViewCell()
         }
-        cell?.recipeTitleLabel.text = recipe.title!
-        cell?.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
-        cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
+        guard indexPath.row < coreDataService.retrieve().count else { return cell }
+        let recipe = coreDataService.retrieve()[indexPath.row]
+        cell.recipeImage.image = UIImage(named: "default_Image.jpg")
+        if let url = recipe.image {
+            cell.recipeImage.imageLoadingFromURL(url: url)
+        }
+        cell.recipeTitleLabel.text = recipe.title!
+        cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
+        cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
    //    cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
-        return cell ?? UITableViewCell()
+        return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

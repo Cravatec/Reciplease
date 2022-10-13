@@ -629,11 +629,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjI-rV-7Lu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2010" y="849"/>
+            <point key="canvasLocation" x="2351" y="863"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UYk-Ig-nju"/>
+        <segue reference="cTC-Td-Jdx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>

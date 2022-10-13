@@ -22,15 +22,17 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeTimeLabel.text = "🕐 \(String(describing: selectedRecipe.time!))"
-        recipeLikeLabel.text = "❤️ \(String(describing: selectedRecipe.like!))"
-        recipeTitleLabel.text = selectedRecipe.title
-        recipeImageView.image = UIImage(named: "default_Image.jpg")
+        recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
+        recipeTimeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
+        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!))"
+        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!))"
+        recipeTitleLabel?.text = selectedRecipe.title
+        recipeImageView?.image = UIImage(named: "default_Image.jpg")
         if let url = selectedRecipe.image {
             recipeImageView.imageLoadingFromURL(url: url)
         }
-        
     }
+    
     @IBAction func getDirections(_ sender: Any) {
         UIApplication.shared.open(selectedRecipe.url)
     }
@@ -58,6 +60,6 @@ extension RecipeViewController: UITableViewDataSource {
         let imageString = selectedRecipe.ingredients![indexPath.row].image
         let ingredientImage = URL(string: imageString!)
         ingredientCell.configureCell(with: ingredientImage, ingredientText: "\(String(describing:ingredientLabel))")
-            return ingredientCell
+        return ingredientCell
     }
 }
