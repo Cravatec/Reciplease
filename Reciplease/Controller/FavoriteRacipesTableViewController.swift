@@ -14,6 +14,8 @@ class FavoriteRacipesTableViewController: UITableViewController {
     
     private let coreDataService = CoreDataService()
     
+    var selectedRecipe: Recipe?
+    
     var favoriteRecipes: [Recipe] = [] {
         didSet {
             favoriteTableView.reloadData()
@@ -22,12 +24,12 @@ class FavoriteRacipesTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        favoriteRecipes = coreDataService.retrieve()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favoriteTableView.reloadData()
+        favoriteRecipes = coreDataService.retrieve()
     }
     
     // MARK: - Table view data source
@@ -53,11 +55,19 @@ class FavoriteRacipesTableViewController: UITableViewController {
         cell.recipeTitleLabel.text = recipe.title!
         cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
         cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
+        
         return cell
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueFavoriteToRecipe", let recipe = selectedRecipe {
+            guard let recipeViewController = segue.destination as? RecipeViewController else { return }
+            recipeViewController.selectedRecipe = recipe
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        _ = favoriteRecipes[indexPath.row]
+        selectedRecipe = favoriteRecipes[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "segueFavoriteToRecipe", sender: self)
     }
