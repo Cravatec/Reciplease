@@ -20,9 +20,9 @@ class RecipesResponseTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        recipeImage.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
+       recipeImage.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
         timeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
-        favoriteButton.setTitle("", for: .normal)
+      favoriteButton.setTitle("", for: .normal)
     }
     
 }

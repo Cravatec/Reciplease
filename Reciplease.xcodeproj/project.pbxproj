@@ -182,6 +182,7 @@
 		226F5D6928BA39B800F93534 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2292FA9F28E611D5007D906A /* Reciplease.xcdatamodeld */,
 				226F5D6D28BA3ADE00F93534 /* Recipe.swift */,
 				22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */,
 				22DFCD1228CA504000226E69 /* Ingredients.swift */,
@@ -223,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				228465D028BF73FD004E2D18 /* SearchViewController.swift */,
-				2292FA9F28E611D5007D906A /* Reciplease.xcdatamodeld */,
 				223BFCA828D343DC00E7A255 /* RecipesResponseViewController.swift */,
 				228648AF28D77E6300C41EDD /* RecipesResponseTableViewCell.swift */,
 				2292884228E0A3470001691B /* RecipeViewController.swift */,
@@ -779,8 +779,7 @@
 				2292FAA028E611D5007D906A /* CDRecipes.xcdatamodel */,
 			);
 			currentVersion = 2292FAA028E611D5007D906A /* CDRecipes.xcdatamodel */;
-			name = Reciplease.xcdatamodeld;
-			path = ../Models/Reciplease.xcdatamodeld;
+			path = Reciplease.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
