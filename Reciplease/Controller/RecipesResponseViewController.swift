@@ -33,12 +33,6 @@ class RecipesResponseViewController: UIViewController {
             RecipeViewController.selectedRecipe = recipe
         }
     }
-    
-    @IBAction func favoriteAction(_ sender: Any) {
-        if let selectedRecipe = selectedRecipe {
-        service.save(recipe: selectedRecipe)
-        }
-    }
 }
 
 extension RecipesResponseViewController: UITableViewDataSource {
@@ -49,7 +43,6 @@ extension RecipesResponseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipesResponseTableViewCell
         let recipe = recipes[indexPath.row]
-        selectedRecipe = recipe
         cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
         if let url = recipe.image {
             cell?.recipeImage.imageLoadingFromURL(url: url)

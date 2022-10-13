@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RecipesResponseTableViewCellDelegate: AnyObject {
+    func didTapFavoriteButton(cell: RecipesResponseTableViewCell)
+}
+
 class RecipesResponseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var recipeTitleLabel: UILabel!
@@ -18,11 +22,18 @@ class RecipesResponseTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLikeView: UIView!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    weak var delegate: RecipesResponseTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-       recipeImage.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
+        recipeImage.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
         timeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
-      favoriteButton.setTitle("", for: .normal)
+        favoriteButton.setTitle("", for: .normal)
     }
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        delegate?.didTapFavoriteButton(cell: self)
+    }
+    
     
 }
