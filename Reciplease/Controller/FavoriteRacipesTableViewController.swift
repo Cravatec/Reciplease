@@ -13,7 +13,7 @@ class FavoriteRacipesTableViewController: UITableViewController {
     @IBOutlet var favoriteTableView: UITableView!
     
     private let coreDataService = CoreDataService()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         coreDataService.retrieve()
@@ -41,5 +41,11 @@ class FavoriteRacipesTableViewController: UITableViewController {
         cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
    //    cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
         return cell ?? UITableViewCell()
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        _ = coreDataService.retrieve()[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "segueFavoriteToRecipe", sender: self)
     }
 }

@@ -281,11 +281,12 @@
                     <navigationItem key="navigationItem" title="Favorites" id="CE6-ny-bz5"/>
                     <connections>
                         <outlet property="favoriteTableView" destination="keC-6T-3Uw" id="vE8-yb-x1g"/>
+                        <segue destination="yYf-sR-hoI" kind="show" identifier="segueFavoriteToRecipe" id="UYk-Ig-nju"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pL-GY-UBg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="1515"/>
+            <point key="canvasLocation" x="1046" y="1698"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jfv-En-vzv">
@@ -631,6 +632,9 @@
             <point key="canvasLocation" x="2010" y="849"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UYk-Ig-nju"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="separatorColor">
