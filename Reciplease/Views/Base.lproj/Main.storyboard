@@ -398,7 +398,6 @@
                                                         <imageReference key="image" image="heart" catalog="system" symbolScale="large" renderingMode="original"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="favoriteAction:" destination="6vO-Lb-nlS" eventType="touchUpInside" id="YW4-AR-kMJ"/>
                                                         <action selector="favoriteButtonTapped:" destination="6nW-zk-2fG" eventType="touchUpInside" id="VGH-mN-Sh6"/>
                                                     </connections>
                                                 </button>

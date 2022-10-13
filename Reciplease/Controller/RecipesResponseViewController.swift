@@ -29,8 +29,8 @@ class RecipesResponseViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToRecipe", let recipe = selectedRecipe {
-            guard let RecipeViewController = segue.destination as? RecipeViewController else { return }
-            RecipeViewController.selectedRecipe = recipe
+            guard let recipeViewController = segue.destination as? RecipeViewController else { return }
+            recipeViewController.selectedRecipe = recipe
         }
     }
 }
@@ -42,6 +42,7 @@ extension RecipesResponseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipesResponseTableViewCell
+        cell?.delegate = self
         let recipe = recipes[indexPath.row]
         cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
         if let url = recipe.image {
@@ -69,4 +70,15 @@ extension RecipesResponseViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "segueToRecipe", sender: self)
     }
+}
+
+extension RecipesResponseViewController: RecipesResponseTableViewCellDelegate {
+    func didTapFavoriteButton(cell: RecipesResponseTableViewCell) {
+        if let indexPath = recipesResponseTableView.indexPath(for: cell) {
+            let recipe = recipes[indexPath.row]
+            service.save(recipe: recipe)
+        }
+    }
+    
+    
 }

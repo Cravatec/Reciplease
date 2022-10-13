@@ -35,5 +35,4 @@ class RecipesResponseTableViewCell: UITableViewCell {
         delegate?.didTapFavoriteButton(cell: self)
     }
     
-    
 }
