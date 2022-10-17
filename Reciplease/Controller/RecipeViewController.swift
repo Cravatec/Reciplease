@@ -45,6 +45,7 @@ class RecipeViewController: UIViewController {
         UIApplication.shared.open(selectedRecipe.url)
     }
 }
+
 // MARK: - TableViewDataSource
 
 extension RecipeViewController: UITableViewDataSource {

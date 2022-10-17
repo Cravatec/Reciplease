@@ -55,7 +55,9 @@ class FavoriteRacipesTableViewController: UITableViewController {
         cell.recipeTitleLabel.text = recipe.title!
         cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
         cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
-        
+        let favoriteImage = UIImage(systemName: "heart.fill")
+        let notFavoriteImage = UIImage(systemName: "heart")
+        cell.favoriteButton.setImage(recipe.isFavorite ? favoriteImage : notFavoriteImage, for: .normal)
         return cell
     }
     
