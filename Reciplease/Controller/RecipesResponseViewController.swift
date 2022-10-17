@@ -74,6 +74,7 @@ extension RecipesResponseViewController: UITableViewDelegate {
 
 extension RecipesResponseViewController: RecipesResponseTableViewCellDelegate {
     func didTapFavoriteButton(cell: RecipesResponseTableViewCell) {
+       
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
             let recipe = recipes[indexPath.row]
             service.save(recipe: recipe)

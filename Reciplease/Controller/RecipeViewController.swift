@@ -24,8 +24,8 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
         recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
         recipeTimeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
-        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time))"
-        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like))"
+        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!))"
+        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!))"
         recipeTitleLabel?.text = selectedRecipe.title
         recipeImageView?.image = UIImage(named: "default_Image.jpg")
         if let url = selectedRecipe.image {
@@ -47,7 +47,7 @@ extension RecipeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let recipe = selectedRecipe else { return 1 }
-        return recipe.ingredients!.count
+        return recipe.ingredients?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,9 +56,9 @@ extension RecipeViewController: UITableViewDataSource {
             withIdentifier: "recipeIngredientCell",
             for: indexPath
         ) as? IngredientTableViewCell else { return UITableViewCell() }
-        let ingredientLabel = selectedRecipe.ingredients![indexPath.row].text
-        let imageString = selectedRecipe.ingredients![indexPath.row].image
-        let ingredientImage = URL(string: imageString!)
+        let ingredientLabel = selectedRecipe.ingredients?[indexPath.row].text
+        let imageString = selectedRecipe.ingredients?[indexPath.row].image
+        let ingredientImage = URL(string: imageString ?? "")
         ingredientCell.configureCell(with: ingredientImage, ingredientText: "\(String(describing:ingredientLabel))")
         return ingredientCell
     }

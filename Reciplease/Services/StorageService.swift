@@ -10,22 +10,18 @@ import CoreData
 
 protocol RecipeStorageService {
     func save(recipe: Recipe)
-
+    
     func retrieve() -> [Recipe]
 }
 
 class CoreDataRecipeStorage: RecipeStorageService {
-
- //   var coreData
-
+    
     func save(recipe: Recipe) {
-
     }
-
+    
     func retrieve() -> [Recipe] {
         return []
     }
-
 }
 
 class CoreDataService: RecipeStorageService {
@@ -38,6 +34,14 @@ class CoreDataService: RecipeStorageService {
     
     func retrieve() -> [Recipe] {
         return coreDataStack.retrieve()
+    }
+    
+    func checkRecipeAlreadyFavorite(with recipeTitle: String) -> Bool {
+        if coreDataStack.checkRecipeAlreadyFavorite(recipeTitle) {
+            return true
+        } else {
+            return false
+        }
     }
     
 }

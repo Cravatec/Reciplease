@@ -27,6 +27,7 @@ class CoreDataStack {
                 let title = data.value(forKey: "title") as? String
                 let image = data.value(forKey: "image") as? String
                 let ingredients = data.value(forKey: "ingredients") as? String
+                let ingredientsArray = ingredients?.components(separatedBy: ",")
                 let like = data.value(forKey: "like") as? Double
                 let time = data.value(forKey: "time") as? Double
                 let url = data.value(forKey: "url") as? String
@@ -66,6 +67,17 @@ class CoreDataStack {
             print("Save in CoreData")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func checkRecipeAlreadyFavorite(_ recipeTitle: String) -> Bool {
+        let fetchRequest: NSFetchRequest<CoreDataStorage> = NSFetchRequest(entityName: "CoreDataRecipe")
+        fetchRequest.predicate = NSPredicate(format: "title == %@", recipeTitle)
+        do {
+            let recipes = try context?.fetch(fetchRequest)
+            return recipes!.isEmpty
+        } catch {
+            return false
         }
     }
 }
