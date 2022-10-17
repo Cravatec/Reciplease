@@ -26,12 +26,14 @@ class CoreDataStack {
             for data in result  {
                 let title = data.value(forKey: "title") as? String
                 let image = data.value(forKey: "image") as? String
-                let ingredients = data.value(forKey: "ingredients") as? String
-                let ingredientsArray = ingredients?.components(separatedBy: ",")
+                let ingredientsLitteral = data.value(forKey: "ingredients") as? String
+                let ingredientsArray = ingredientsLitteral?.components(separatedBy: ",")
+                let ingredients = ingredientsArray?.compactMap({ ingredientString in
+                    RecipeIngredients(text: ingredientString, image: nil)
+                })
                 let like = data.value(forKey: "like") as? Double
                 let time = data.value(forKey: "time") as? Double
                 let url = data.value(forKey: "url") as? String
-                
                 let imageUrl = URL(string: image ?? "")
                 let recipeUrl = URL(string: url ?? "")
                 let recipe = Recipe(title: title,
@@ -42,7 +44,7 @@ class CoreDataStack {
                                     detailIngredients: nil,
                                     uri: nil,
                                     url: recipeUrl!,
-                                    ingredients: nil)
+                                    ingredients: ingredients)
                 recipes.append(recipe)
                 print("retrieve")
             }
