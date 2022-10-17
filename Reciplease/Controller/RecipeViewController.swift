@@ -33,6 +33,14 @@ class RecipeViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let favoriteImage = UIImage(systemName: "heart.fill")
+        let notFavoriteImage = UIImage(systemName: "heart")
+        recipeFavoriteButton.setImage(selectedRecipe.isFavorite ? favoriteImage : notFavoriteImage,
+                                      for: .normal)
+    }
+    
     @IBAction func getDirections(_ sender: Any) {
         UIApplication.shared.open(selectedRecipe.url)
     }

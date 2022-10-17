@@ -20,4 +20,5 @@ struct Recipe {
     var uri: String?
     var url: URL
     var ingredients: [RecipeIngredients]?
+    var isFavorite: Bool = false
 }

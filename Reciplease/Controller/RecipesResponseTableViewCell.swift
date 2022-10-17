@@ -35,13 +35,8 @@ class RecipesResponseTableViewCell: UITableViewCell {
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.didTapFavoriteButton(cell: self)
-        //favoriteButtonUI()
     }
     
-//    func favoriteButtonUI() {
-//        let alreadySaved = CoreDataStack.checkRecipeAlreadyFavorite()
-//        let heartImage = alreadySaved ? "heart.fill" : "heart"
-//        favoriteButton.setImage(UIImage(systemName: heartImage), for: .normal)
-//    }
+
     
 }
