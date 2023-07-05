@@ -52,10 +52,14 @@ extension RecipesResponseViewController: UITableViewDataSource {
         cell!.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
         cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
         cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
+        setStatusFavorite(cell: cell, recipe: recipe)
+        return cell ?? UITableViewCell()
+    }
+    
+    func setStatusFavorite(cell:RecipesResponseTableViewCell?, recipe:Recipe) {
         let favoriteImage = UIImage(systemName: "heart.fill")
         let notFavoriteImage = UIImage(systemName: "heart")
         cell?.favoriteButton.setImage(recipe.isFavorite ? favoriteImage : notFavoriteImage, for: .normal)
-        return cell ?? UITableViewCell()
     }
 }
 
@@ -80,12 +84,10 @@ extension RecipesResponseViewController: RecipesResponseTableViewCellDelegate {
         
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
             var recipe = recipes[indexPath.row]
+            recipe.isFavorite = !recipe.isFavorite
             service.save(recipe: recipe)
-            recipe.isFavorite = true
-            recipes.insert(recipe, at: indexPath.row)
-            let favoriteImage = UIImage(systemName: "heart.fill")
-            cell.favoriteButton.setImage(favoriteImage, for: .normal)
-            recipesResponseTableView.reloadData()
+            recipes[indexPath.row] = recipe
+            setStatusFavorite(cell: cell, recipe: recipe)
         }
     }
 }

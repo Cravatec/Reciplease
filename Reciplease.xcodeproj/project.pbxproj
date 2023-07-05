@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22250A8E2A55965C0035E890 /* Add_Ingredients_Search.png in Resources */ = {isa = PBXBuildFile; fileRef = 22250A8D2A55965C0035E890 /* Add_Ingredients_Search.png */; };
 		223BFCA728D331B800E7A255 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BFCA628D331B800E7A255 /* IngredientService.swift */; };
 		223BFCA928D343DC00E7A255 /* RecipesResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223BFCA828D343DC00E7A255 /* RecipesResponseViewController.swift */; };
 		225AD8E028DC665300A6AF1D /* UIImageView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225AD8DF28DC665300A6AF1D /* UIImageView_Extension.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22250A8D2A55965C0035E890 /* Add_Ingredients_Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Add_Ingredients_Search.png; sourceTree = "<group>"; };
 		223BFCA628D331B800E7A255 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
 		223BFCA828D343DC00E7A255 /* RecipesResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesResponseViewController.swift; sourceTree = "<group>"; };
 		225AD8DF28DC665300A6AF1D /* UIImageView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView_Extension.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				22903D5A28DCDE4D0059AAA3 /* default_Image.jpg */,
 				225AD8DF28DC665300A6AF1D /* UIImageView_Extension.swift */,
+				22250A8D2A55965C0035E890 /* Add_Ingredients_Search.png */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			files = (
 				226F5D4328BA27E700F93534 /* LaunchScreen.storyboard in Resources */,
 				226F5D4028BA27E700F93534 /* Assets.xcassets in Resources */,
+				22250A8E2A55965C0035E890 /* Add_Ingredients_Search.png in Resources */,
 				226F5D3B28BA27E400F93534 /* Main.storyboard in Resources */,
 				22903D5B28DCDE4D0059AAA3 /* default_Image.jpg in Resources */,
 			);

@@ -29,7 +29,13 @@ class CoreDataService: RecipeStorageService {
     let coreDataStack = CoreDataStack()
     
     func save(recipe: Recipe) {
-        coreDataStack.save(recipe: recipe)
+        
+        if (recipe.isFavorite) {
+            coreDataStack.save(recipe: recipe)
+        }
+        else {
+     //       coreDataStack.checkRecipeAlreadyFavorite(<#String#>)
+        }
     }
     
     func retrieve() -> [Recipe] {
