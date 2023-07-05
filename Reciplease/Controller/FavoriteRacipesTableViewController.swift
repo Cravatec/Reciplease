@@ -52,7 +52,7 @@ class FavoriteRacipesTableViewController: UITableViewController {
         if let url = recipe.image {
             cell.recipeImage.imageLoadingFromURL(url: url)
         }
-        cell.recipeTitleLabel.text = recipe.title!
+        cell.recipeTitleLabel.text = recipe.title
         cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
         cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
         let favoriteImage = UIImage(systemName: "heart.fill")
