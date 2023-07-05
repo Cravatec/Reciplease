@@ -97,6 +97,23 @@ class CoreDataStack {
         }
     }
     
+    func save(recipe: Recipe, completion: (Result<(Void), Error>) -> Void) {
+        let favoriteRecipe = NSEntityDescription.insertNewObject(forEntityName: "CoreDataRecipe", into: context!)
+        favoriteRecipe.setValue(recipe.title, forKey: "title")
+        favoriteRecipe.setValue(recipe.image?.absoluteString, forKey: "image")
+        let ingredientsInLine = recipe.ingredients?.map({$0.text}).joined(separator: ",")
+        favoriteRecipe.setValue(ingredientsInLine ?? "", forKey: "ingredients")
+        favoriteRecipe.setValue(recipe.like, forKey: "like")
+        favoriteRecipe.setValue(recipe.time, forKey: "time")
+        favoriteRecipe.setValue(recipe.url.absoluteString, forKey: "url")
+        do {
+            try context!.save()
+            print("Save in CoreData")
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
     func save(recipe: Recipe) {
         let favoriteRecipe = NSEntityDescription.insertNewObject(forEntityName: "CoreDataRecipe", into: context!)
         favoriteRecipe.setValue(recipe.title, forKey: "title")
