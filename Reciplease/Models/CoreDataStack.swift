@@ -141,6 +141,31 @@ class CoreDataStack {
             return false
         }
     }
+    
+    func delete(_ recipe: Recipe, completion: (Result<Void, Error>) -> Void) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataRecipe")
+        fetchRequest.predicate = NSPredicate(format: "title == %@", recipe.title!)
+
+        do {
+            guard let result = try context?.fetch(fetchRequest) as? [NSManagedObject], let recipeToDelete = result.first else {
+                return completion(.failure(StorageError.notFound))
+            }
+            
+            context?.delete(recipeToDelete)
+
+            do {
+                try context?.save()
+                completion(.success(()))
+                print("Deleted recipe from CoreData")
+            } catch {
+                completion(.failure(error))
+                print("Failed to delete recipe from CoreData: \(error.localizedDescription)")
+            }
+        } catch {
+            completion(.failure(error))
+            print("Failed to fetch recipe from CoreData for deletion: \(error.localizedDescription)")
+        }
+    }
 }
 
 
