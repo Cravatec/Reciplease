@@ -38,7 +38,7 @@ class FavoriteRacipesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favorites", for: indexPath) as? RecipesResponseTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "favorites", for: indexPath) as? RecipeTableViewCell else {
             return UITableViewCell()
         }
         guard indexPath.row < favoriteRecipes.count else { return cell }

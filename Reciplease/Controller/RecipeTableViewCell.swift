@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol RecipesResponseTableViewCellDelegate: AnyObject {
-    func didTapFavoriteButton(cell: RecipesResponseTableViewCell)
+protocol RecipeTableViewCellDelegate: AnyObject {
+    func didTapFavoriteButton(cell: RecipeTableViewCell)
 }
 
-class RecipesResponseTableViewCell: UITableViewCell {
+final class RecipeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var recipeTimeLabel: UILabel!
@@ -22,7 +22,7 @@ class RecipesResponseTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLikeView: UIView!
     @IBOutlet weak var favoriteButton: UIButton!
     
-    weak var delegate: RecipesResponseTableViewCellDelegate?
+    weak var delegate: RecipeTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

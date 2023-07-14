@@ -41,7 +41,7 @@ extension RecipesResponseViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipesResponseTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipeTableViewCell
         cell?.delegate = self
         let recipe = recipes[indexPath.row]
         cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
@@ -56,7 +56,7 @@ extension RecipesResponseViewController: UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
     
-    func setStatusFavorite(cell:RecipesResponseTableViewCell?, recipe:Recipe) {
+    func setStatusFavorite(cell:RecipeTableViewCell?, recipe:Recipe) {
         let favoriteImage = UIImage(systemName: "heart.fill")
         let notFavoriteImage = UIImage(systemName: "heart")
         cell?.favoriteButton.setImage(recipe.isFavorite ? favoriteImage : notFavoriteImage, for: .normal)
@@ -79,8 +79,8 @@ extension RecipesResponseViewController: UITableViewDelegate {
     }
 }
 
-extension RecipesResponseViewController: RecipesResponseTableViewCellDelegate {
-    func didTapFavoriteButton(cell: RecipesResponseTableViewCell) {
+extension RecipesResponseViewController: RecipeTableViewCellDelegate {
+    func didTapFavoriteButton(cell: RecipeTableViewCell) {
         
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
             var recipe = recipes[indexPath.row]
