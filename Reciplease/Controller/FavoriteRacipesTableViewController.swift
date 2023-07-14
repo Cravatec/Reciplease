@@ -21,15 +21,14 @@ class FavoriteRacipesTableViewController: UITableViewController {
             favoriteTableView.reloadData()
         }
     }
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         favoriteRecipes = coreDataService.retrieve()
+    }
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        print("Button Tapped")
     }
     
     // MARK: - Table view data source
@@ -56,8 +55,7 @@ class FavoriteRacipesTableViewController: UITableViewController {
         cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
         cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
         let favoriteImage = UIImage(systemName: "heart.fill")
-        let notFavoriteImage = UIImage(systemName: "heart")
-        cell.favoriteButton.setImage(recipe.isFavorite ? favoriteImage : notFavoriteImage, for: .normal)
+        cell.favoriteButton.setImage(favoriteImage, for: .normal)
         return cell
     }
     
