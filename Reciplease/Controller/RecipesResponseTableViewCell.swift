@@ -24,8 +24,6 @@ class RecipesResponseTableViewCell: UITableViewCell {
     
     weak var delegate: RecipesResponseTableViewCellDelegate?
     
-    let coreDataStack = CoreDataStack()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         recipeImage.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
@@ -36,7 +34,4 @@ class RecipesResponseTableViewCell: UITableViewCell {
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         delegate?.didTapFavoriteButton(cell: self)
     }
-    
-
-    
 }

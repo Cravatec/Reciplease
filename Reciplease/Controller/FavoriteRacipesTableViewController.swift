@@ -27,10 +27,6 @@ class FavoriteRacipesTableViewController: UITableViewController {
         favoriteRecipes = coreDataService.retrieve()
     }
     
-    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        print("Button Tapped")
-    }
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {

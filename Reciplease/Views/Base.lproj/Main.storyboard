@@ -225,7 +225,6 @@
                                             </state>
                                             <connections>
                                                 <action selector="favoriteAction:" destination="6vO-Lb-nlS" eventType="touchUpInside" id="gYP-me-Y5M"/>
-                                                <action selector="favoriteButtonTapped:" destination="oR4-CA-mio" eventType="touchUpInside" id="x8l-SK-b3m"/>
                                             </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DZO-1o-Hua">
