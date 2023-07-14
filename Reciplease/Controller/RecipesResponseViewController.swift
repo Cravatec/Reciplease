@@ -41,7 +41,7 @@ extension RecipesResponseViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesResponseTable", for: indexPath) as? RecipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as? RecipeTableViewCell
         cell?.delegate = self
         let recipe = recipes[indexPath.row]
         cell?.recipeImage.image = UIImage(named: "default_Image.jpg")
