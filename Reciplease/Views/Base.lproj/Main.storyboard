@@ -160,7 +160,7 @@
         <!--Favorites View Controller-->
         <scene sceneID="XSQ-5D-PJh">
             <objects>
-                <tableViewController id="oR4-CA-mio" userLabel="Favorites View Controller" customClass="FavoriteRacipesTableViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oR4-CA-mio" userLabel="Favorites View Controller" customClass="FavoriteRecipesTableViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="keC-6T-3Uw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,6 +225,7 @@
                                             </state>
                                             <connections>
                                                 <action selector="favoriteAction:" destination="6vO-Lb-nlS" eventType="touchUpInside" id="gYP-me-Y5M"/>
+                                                <action selector="favoriteButtonTapped:" destination="ccs-Ta-IWA" eventType="touchUpInside" id="Zf8-du-dJ5"/>
                                             </connections>
                                         </button>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DZO-1o-Hua">

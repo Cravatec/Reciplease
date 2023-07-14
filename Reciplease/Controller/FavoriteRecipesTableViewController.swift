@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class FavoriteRacipesTableViewController: UITableViewController {
+class FavoriteRecipesTableViewController: UITableViewController {
     
     @IBOutlet var favoriteTableView: UITableView!
     
@@ -52,6 +52,7 @@ class FavoriteRacipesTableViewController: UITableViewController {
         cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
         let favoriteImage = UIImage(systemName: "heart.fill")
         cell.favoriteButton.setImage(favoriteImage, for: .normal)
+        cell.delegate = self
         return cell
     }
     
@@ -66,5 +67,10 @@ class FavoriteRacipesTableViewController: UITableViewController {
         selectedRecipe = favoriteRecipes[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "segueFavoriteToRecipe", sender: self)
+    }
+}
+
+extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
+    func didTapFavoriteButton(cell: RecipeTableViewCell) {
     }
 }
