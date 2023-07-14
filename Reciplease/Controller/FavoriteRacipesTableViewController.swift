@@ -12,7 +12,7 @@ class FavoriteRacipesTableViewController: UITableViewController {
     
     @IBOutlet var favoriteTableView: UITableView!
     
-    private let coreDataService = CoreDataService()
+    private let coreDataService = CoreDataRecipeStorage()
     
     var selectedRecipe: Recipe?
     

@@ -17,7 +17,7 @@ class RecipesResponseViewController: UIViewController {
     
     var recipes = [Recipe]()
     private var selectedRecipe: Recipe?
-    private let service: RecipeStorageService = CoreDataService()
+    private let service: RecipeStorageService = CoreDataRecipeStorage()
     
     @IBOutlet weak var recipesResponseTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!

@@ -14,27 +14,17 @@ protocol RecipeStorageService {
     func retrieve() -> [Recipe]
 }
 
-class CoreDataRecipeStorage: RecipeStorageService {
-    
-    func save(recipe: Recipe) {
-    }
-    
-    func retrieve() -> [Recipe] {
-        return []
-    }
-}
-
-class CoreDataService: RecipeStorageService {
+final class CoreDataRecipeStorage: RecipeStorageService {
     
     let coreDataStack = CoreDataStack()
     
     func save(recipe: Recipe) {
-        
-        if (recipe.isFavorite) {
-            coreDataStack.save(recipe: recipe)
-        }
-        else {
-     //       coreDataStack.checkRecipeAlreadyFavorite(<#String#>)
+        coreDataStack.save(recipe: recipe)
+    }
+    
+    func delete(recipe: Recipe) {
+        coreDataStack.delete(recipe) { result in
+            print("Deletion Result \(result)")
         }
     }
     
