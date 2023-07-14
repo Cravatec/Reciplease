@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 
-//public class CoreDataRecipe: NSManagedObject {
-//
-//}
+public class CoreDataRecipe: NSManagedObject {
+
+}
