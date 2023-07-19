@@ -85,7 +85,9 @@ extension RecipesResponseViewController: RecipeTableViewCellDelegate {
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
             var recipe = recipes[indexPath.row]
             recipe.isFavorite = !recipe.isFavorite
-            service.save(recipe: recipe)
+            service.save(recipe: recipe) { result in 
+                
+            }
             recipes[indexPath.row] = recipe
             setStatusFavorite(cell: cell, recipe: recipe)
         }

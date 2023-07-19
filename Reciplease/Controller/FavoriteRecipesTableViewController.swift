@@ -24,7 +24,7 @@ class FavoriteRecipesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favoriteRecipes = coreDataService.retrieve()
+        reloadFavorites()
     }
     
     // MARK: - Table view data source
@@ -81,12 +81,30 @@ extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
         
         if let indexPath = tableView.indexPath(for: cell) {
             let recipe = favoriteRecipes[indexPath.row]
-            coreDataService.delete(recipe: recipe)
-            reloadFavorites()
+            coreDataService.delete(recipe) { [weak self] result in
+                switch result {
+                case .success:
+                    self?.reloadFavorites()
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
         }
     }
+    
     private func reloadFavorites() {
-        favoriteRecipes = coreDataService.retrieve()
-        favoriteTableView.reloadData()
+        coreDataService.retrieve { [weak self] result in
+            switch result {
+            case .success(let recipes):
+                DispatchQueue.main.async {
+                    self?.favoriteRecipes = recipes
+                    self?.favoriteTableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
