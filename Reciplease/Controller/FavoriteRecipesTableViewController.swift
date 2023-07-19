@@ -14,13 +14,9 @@ class FavoriteRecipesTableViewController: UITableViewController {
     
     private let coreDataService = CoreDataRecipeStorage()
     
-    var selectedRecipe: Recipe?
+    private var selectedRecipe: Recipe?
     
-    var favoriteRecipes: [Recipe] = [] {
-        didSet {
-            favoriteTableView.reloadData()
-        }
-    }
+    private var favoriteRecipes: [Recipe] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
