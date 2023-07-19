@@ -80,12 +80,13 @@ extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
     func didTapFavoriteButton(cell: RecipeTableViewCell) {
         
         if let indexPath = tableView.indexPath(for: cell) {
-            var recipe = favoriteRecipes[indexPath.row]
-            recipe.isFavorite = !recipe.isFavorite
+            let recipe = favoriteRecipes[indexPath.row]
             coreDataService.delete(recipe: recipe)
-            favoriteRecipes[indexPath.row] = recipe
-            setStatusFavorite(cell: cell, recipe: recipe)
-            favoriteTableView.reloadData()
+            reloadFavorites()
         }
+    }
+    private func reloadFavorites() {
+        favoriteRecipes = coreDataService.retrieve()
+        favoriteTableView.reloadData()
     }
 }
