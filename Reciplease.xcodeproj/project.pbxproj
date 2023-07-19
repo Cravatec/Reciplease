@@ -35,7 +35,6 @@
 		22DFCD1128CA3B4400226E69 /* RecipeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */; };
 		22DFCD1328CA504000226E69 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DFCD1228CA504000226E69 /* Ingredients.swift */; };
 		22FEC08528E5D54E0084F175 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FEC08428E5D54E0084F175 /* IngredientTableViewCell.swift */; };
-		22FEC08728E5FB460084F175 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FEC08628E5FB460084F175 /* CoreDataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +86,6 @@
 		22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeResponse.swift; sourceTree = "<group>"; };
 		22DFCD1228CA504000226E69 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		22FEC08428E5D54E0084F175 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
-		22FEC08628E5FB460084F175 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +186,6 @@
 				22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */,
 				22DFCD1228CA504000226E69 /* Ingredients.swift */,
 				223BFCA628D331B800E7A255 /* IngredientService.swift */,
-				22FEC08628E5FB460084F175 /* CoreDataStorage.swift */,
 				2292FAA228E6130A007D906A /* CoreDataRecipe+CoreDataClass.swift */,
 				2292FAA328E6130A007D906A /* CoreDataRecipe+CoreDataProperties.swift */,
 			);
@@ -390,7 +387,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				228465D128BF73FD004E2D18 /* SearchViewController.swift in Sources */,
-				22FEC08728E5FB460084F175 /* CoreDataStorage.swift in Sources */,
 				2292FAA428E6130A007D906A /* CoreDataRecipe+CoreDataClass.swift in Sources */,
 				225AD8E028DC665300A6AF1D /* UIImageView_Extension.swift in Sources */,
 				228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */,

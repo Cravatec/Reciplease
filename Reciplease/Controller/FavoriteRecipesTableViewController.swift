@@ -12,7 +12,7 @@ class FavoriteRecipesTableViewController: UITableViewController {
     
     @IBOutlet var favoriteTableView: UITableView!
     
-    private let coreDataService = CoreDataRecipeStorage()
+    private var storageService: RecipeStorageService = CoreDataRecipeStorage()
     
     private var selectedRecipe: Recipe?
     
@@ -77,7 +77,7 @@ extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
         
         if let indexPath = tableView.indexPath(for: cell) {
             let recipe = favoriteRecipes[indexPath.row]
-            coreDataService.delete(recipe) { [weak self] result in
+            storageService.delete(recipe) { [weak self] result in
                 switch result {
                 case .success:
                     self?.reloadFavorites()
@@ -90,7 +90,7 @@ extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
     }
     
     private func reloadFavorites() {
-        coreDataService.retrieve { [weak self] result in
+        storageService.retrieve { [weak self] result in
             switch result {
             case .success(let recipes):
                 DispatchQueue.main.async {
