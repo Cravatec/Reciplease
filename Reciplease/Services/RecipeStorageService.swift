@@ -56,7 +56,6 @@ final class CoreDataRecipeStorage: RecipeStorageService {
                                     url: recipeUrl!,
                                     ingredients: ingredients)
                 recipes.append(recipe)
-                print("retrieve")
             }
             completion(.success(recipes))
         } catch {
@@ -75,7 +74,6 @@ final class CoreDataRecipeStorage: RecipeStorageService {
         favoriteRecipe.setValue(recipe.url.absoluteString, forKey: "url")
         do {
             try context!.save()
-            print("Save in CoreData")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
