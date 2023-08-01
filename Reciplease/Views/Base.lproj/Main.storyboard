@@ -72,6 +72,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYf-iS-G6G">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Clear all ingredients in your list" label="Clear"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Clear"/>
                                         <connections>
@@ -80,11 +81,13 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Salad, Tomato, Onion, ..." textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zTr-dN-jao">
                                         <rect key="frame" x="80" y="0.0" width="185.5" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Write your ingredient" label="Ingredient"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="continue" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="no" textContentType="name"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XK3-j8-myC">
                                         <rect key="frame" x="281.5" y="0.0" width="55" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" hint="Add your ingredient to search recipes" label="Add Button"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Add"/>
                                         <connections>
@@ -313,7 +316,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJ8-yz-pol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-581" y="1515"/>
+            <point key="canvasLocation" x="-582" y="1698"/>
         </scene>
         <!--Recipes Response View Controller-->
         <scene sceneID="7Af-3P-IRd">
@@ -643,7 +646,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UYk-Ig-nju"/>
+        <segue reference="cTC-Td-Jdx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_Ingredients_Search.png" width="1458" height="1458"/>
