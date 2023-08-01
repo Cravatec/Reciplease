@@ -27,6 +27,12 @@ class RecipesResponseViewController: UIViewController {
         activityIndicator.startAnimating()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        recipesResponseTableView.reloadData()
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToRecipe", let recipe = selectedRecipe {
             guard let recipeViewController = segue.destination as? RecipeViewController else { return }
@@ -85,11 +91,31 @@ extension RecipesResponseViewController: RecipeTableViewCellDelegate {
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
             var recipe = recipes[indexPath.row]
             recipe.isFavorite = !recipe.isFavorite
-            service.save(recipe: recipe) { result in 
-                
+            service.save(recipe: recipe) { result in
+                switch result {
+                case .success:
+                    self.reloadFavorites()
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
             recipes[indexPath.row] = recipe
             setStatusFavorite(cell: cell, recipe: recipe)
+        }
+    }
+    
+    private func reloadFavorites() {
+        service.retrieve { [weak self] result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.recipesResponseTableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
 }
