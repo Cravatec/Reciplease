@@ -24,10 +24,9 @@ extension UIImageView {
         }
     }
 }
-extension UIView
-{
-    func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat)
-    {
+
+extension UIView {
+    func makeCornerRounded(cornerRadius: CGFloat, borderWidth: CGFloat) {
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
         layer.borderWidth = borderWidth

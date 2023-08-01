@@ -24,6 +24,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         searchButton.isEnabled = false
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         ingredientTableView.reloadData()

@@ -31,7 +31,6 @@ class AlamoFireFetchingRecipes {
                     Recipe(hit: hit)
                 }
                 callback(.success(recipes))
-                //   print(recipes)
                 return
             }
             if let error = response.error {
