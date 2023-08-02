@@ -21,6 +21,7 @@ extension CoreDataRecipe {
     @NSManaged public var like: Double
     @NSManaged public var image: String?
     @NSManaged public var ingredients: String?
+    @NSManaged public var ingredientImage: String?
     @NSManaged public var url: String?
 
 }
