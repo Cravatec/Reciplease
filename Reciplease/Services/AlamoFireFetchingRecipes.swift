@@ -14,7 +14,8 @@ class AlamoFireFetchingRecipes {
     // MARK: - Singleton pattern
     
     static let shared = AlamoFireFetchingRecipes()
-    init() {}
+    
+    private init() {}
     
     //MARK: - Methods
     
@@ -35,21 +36,22 @@ class AlamoFireFetchingRecipes {
             }
             if let error = response.error {
                 callback(.failure(error))
-                print(error)
             }
         }
     }
     
 }
 
-extension Recipe {
+private extension Recipe {
     init(hit: Hit) {
         title = hit.recipe.label
         time = hit.recipe.totalTime
         like = hit.recipe.yield
         detailIngredients = String(describing:hit.recipe.ingredientLines)
         image = hit.recipe.image
-        ingredients = hit.recipe.ingredients
+        ingredients = hit.recipe.ingredients.map({ ingredient in
+            RecipeIngredient(text: ingredient.text, imageURL: URL(string: ingredient.image ?? ""))
+        })
         url = hit.recipe.url
     }
 }

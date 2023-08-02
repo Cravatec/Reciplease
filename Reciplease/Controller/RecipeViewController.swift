@@ -66,9 +66,8 @@ extension RecipeViewController: UITableViewDataSource {
             for: indexPath
         ) as? IngredientTableViewCell else { return UITableViewCell() }
         let ingredient = selectedRecipe.ingredients?[indexPath.row].text
-        let imageString = selectedRecipe.ingredients?[indexPath.row].image
-        let ingredientImage = URL(string: imageString ?? "")
-        ingredientCell.configureCell(with: ingredientImage, ingredientText: ingredient ?? "No ingredient")
+        let ingredientImageURL = selectedRecipe.ingredients?[indexPath.row].imageURL
+        ingredientCell.configureCell(with: ingredientImageURL, ingredientText: ingredient ?? "No ingredient")
         return ingredientCell
     }
 }

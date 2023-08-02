@@ -39,7 +39,7 @@ final class CoreDataRecipeStorage: RecipeStorageService {
                 let ingredientsLitteral = data.value(forKey: "ingredients") as? String
                 let ingredientsArray = ingredientsLitteral?.components(separatedBy: ",")
                 let ingredients = ingredientsArray?.compactMap({ ingredientString in
-                    RecipeIngredients(text: ingredientString, image: nil)
+                    RecipeIngredient(text: ingredientString, imageURL: nil)
                 })
                 let like = data.value(forKey: "like") as? Double
                 let time = data.value(forKey: "time") as? Double
