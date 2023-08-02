@@ -35,13 +35,13 @@ struct APIRecipe: Decodable {
     let url: URL
     let yield: Double
     let ingredientLines: [String]
-    let ingredients: [RecipeIngredients]
+    let ingredients: [RecipeIngredientResponse]
     let totalTime: Double
 }
 
 // MARK: - Ingredient
 
-struct RecipeIngredients: Decodable {
+struct RecipeIngredientResponse: Decodable {
     let text: String
     let image: String?
 }

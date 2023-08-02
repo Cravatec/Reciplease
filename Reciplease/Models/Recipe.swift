@@ -19,6 +19,11 @@ struct Recipe {
     var detailIngredients: String?
     var uri: String?
     var url: URL
-    var ingredients: [RecipeIngredients]?
+    var ingredients: [RecipeIngredient]?
     var isFavorite: Bool = false
+}
+
+struct RecipeIngredient {
+    let text: String
+    let imageURL: URL?
 }
