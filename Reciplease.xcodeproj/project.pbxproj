@@ -26,6 +26,7 @@
 		228465D328BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */; };
 		228465D628BF76AF004E2D18 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228465D528BF76AF004E2D18 /* ApiKey.swift */; };
 		228648B028D77E6300C41EDD /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228648AF28D77E6300C41EDD /* RecipeTableViewCell.swift */; };
+		22898C532A7A652C003702C4 /* AlamoFireServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22898C522A7A652C003702C4 /* AlamoFireServiceMock.swift */; };
 		22903D5B28DCDE4D0059AAA3 /* default_Image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 22903D5A28DCDE4D0059AAA3 /* default_Image.jpg */; };
 		2292884328E0A3470001691B /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292884228E0A3470001691B /* RecipeViewController.swift */; };
 		2292FAA128E611D5007D906A /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2292FA9F28E611D5007D906A /* Reciplease.xcdatamodeld */; };
@@ -79,6 +80,7 @@
 		228465D228BF75EE004E2D18 /* AlamoFireFetchingRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireFetchingRecipes.swift; sourceTree = "<group>"; };
 		228465D528BF76AF004E2D18 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		228648AF28D77E6300C41EDD /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		22898C522A7A652C003702C4 /* AlamoFireServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireServiceMock.swift; sourceTree = "<group>"; };
 		22903D5A28DCDE4D0059AAA3 /* default_Image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default_Image.jpg; sourceTree = "<group>"; };
 		2292884228E0A3470001691B /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		2292FAA028E611D5007D906A /* CDRecipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CDRecipes.xcdatamodel; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				226F5D4D28BA27E700F93534 /* RecipleaseTests.swift */,
 				2280B3DE2A7297EA002BE44A /* CoreDataStorageTests.swift */,
+				22898C522A7A652C003702C4 /* AlamoFireServiceMock.swift */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2280B3DF2A7297EA002BE44A /* CoreDataStorageTests.swift in Sources */,
+				22898C532A7A652C003702C4 /* AlamoFireServiceMock.swift in Sources */,
 				226F5D4E28BA27E700F93534 /* RecipleaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
