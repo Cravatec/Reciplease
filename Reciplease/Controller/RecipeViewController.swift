@@ -22,15 +22,7 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
-        recipeTimeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
-        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!))"
-        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!))"
-        recipeTitleLabel?.text = selectedRecipe.title
-        recipeImageView?.image = UIImage(named: "default_Image.jpg")
-        if let url = selectedRecipe.image {
-            recipeImageView.imageLoadingFromURL(url: url)
-        }
+        userInterface()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +35,18 @@ class RecipeViewController: UIViewController {
     
     @IBAction func getDirections(_ sender: Any) {
         UIApplication.shared.open(selectedRecipe.url)
+    }
+    
+    func userInterface() {
+        recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
+        recipeTimeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
+        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!))"
+        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!))"
+        recipeTitleLabel?.text = selectedRecipe.title
+        recipeImageView?.image = UIImage(named: "default_Image.jpg")
+        if let url = selectedRecipe.image {
+            recipeImageView.imageLoadingFromURL(url: url)
+        }
     }
 }
 
