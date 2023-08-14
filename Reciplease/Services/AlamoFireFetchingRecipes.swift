@@ -50,7 +50,7 @@ private extension Recipe {
         detailIngredients = String(describing:hit.recipe.ingredientLines)
         image = hit.recipe.image
         ingredients = hit.recipe.ingredients.map({ ingredient in
-            RecipeIngredient(text: ingredient.text, imageURL: URL(string: ingredient.image ?? ""))
+            RecipeIngredient(text: ingredient.text, imageURL: String(ingredient.image ?? ""))
         })
         url = hit.recipe.url
     }

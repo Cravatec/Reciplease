@@ -8,12 +8,12 @@
 import UIKit
 
 class IngredientTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var ingredientImage: UIImageView!
     @IBOutlet weak var ingredientLabel: UILabel!
     
-    func configureCell(with url: URL?, ingredientText: String) {
-        if let url = url {
+    func configureCell(with url: String?, ingredientText: String) {
+        if let url = URL(string: url ?? "") {
             ingredientImage.imageLoadingFromURL(url: url)
         }
         ingredientLabel.text = ingredientText

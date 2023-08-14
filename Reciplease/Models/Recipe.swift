@@ -25,5 +25,5 @@ struct Recipe {
 
 struct RecipeIngredient {
     let text: String
-    let imageURL: URL?
+    let imageURL: String
 }

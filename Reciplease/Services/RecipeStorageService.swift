@@ -36,11 +36,8 @@ final class CoreDataRecipeStorage: RecipeStorageService {
             for data in result  {
                 let title = data.value(forKey: "title") as? String
                 let image = data.value(forKey: "image") as? String
-                let ingredientsLitteral = data.value(forKey: "ingredients") as? String
-                let ingredientsArray = ingredientsLitteral?.components(separatedBy: ",")
-                let ingredients = ingredientsArray?.compactMap({ ingredientString in
-                    RecipeIngredient(text: ingredientString, imageURL: nil)
-                })
+                let ingredientText = data.value(forKey: "ingredients") as! String
+                let ingredientImage = data.value(forKey: "ingredientImage") as! String
                 let like = data.value(forKey: "like") as? Double
                 let time = data.value(forKey: "time") as? Double
                 let url = data.value(forKey: "url") as? String
@@ -54,7 +51,7 @@ final class CoreDataRecipeStorage: RecipeStorageService {
                                     detailIngredients: nil,
                                     uri: nil,
                                     url: recipeUrl!,
-                                    ingredients: ingredients)
+                                    ingredients: ingredientsConverterForCell(text: ingredientText, image: ingredientImage))
                 recipes.append(recipe)
             }
             completion(.success(recipes))
@@ -67,8 +64,10 @@ final class CoreDataRecipeStorage: RecipeStorageService {
         let favoriteRecipe = NSEntityDescription.insertNewObject(forEntityName: "CoreDataRecipe", into: context!)
         favoriteRecipe.setValue(recipe.title, forKey: "title")
         favoriteRecipe.setValue(recipe.image?.absoluteString, forKey: "image")
-        let ingredientsInLine = recipe.ingredients?.map({$0.text}).joined(separator: ",")
-        favoriteRecipe.setValue(ingredientsInLine ?? "", forKey: "ingredients")
+        let ingredientsText = recipe.ingredients?.map({$0.text}).joined(separator: " • ")
+        favoriteRecipe.setValue(ingredientsText ?? "", forKey: "ingredients")
+        let ingredientImage = recipe.ingredients?.compactMap({$0.imageURL}).joined(separator: " • ")
+        favoriteRecipe.setValue(ingredientImage ?? "", forKey: "ingredientImage")
         favoriteRecipe.setValue(recipe.like, forKey: "like")
         favoriteRecipe.setValue(recipe.time, forKey: "time")
         favoriteRecipe.setValue(recipe.url.absoluteString, forKey: "url")
@@ -97,4 +96,21 @@ final class CoreDataRecipeStorage: RecipeStorageService {
             print("Failed to fetch recipe from CoreData for deletion: \(error.localizedDescription)")
         }
     }
+}
+
+private func ingredientsConverterForCell(text: String, image: String) -> [RecipeIngredient] {
+    let text = text.components(separatedBy: " • ")
+    let imageURL = image.components(separatedBy: " • ")
+    var ingredients: [RecipeIngredient] = []
+    
+    for (index, text) in text.enumerated() {
+        var image: String?
+        if imageURL.indices.contains(index) {
+            image = imageURL[index]
+        }
+        
+        let ingredient = RecipeIngredient(text: text, imageURL: image ?? "")
+        ingredients.append(ingredient)
+    }
+    return ingredients
 }
