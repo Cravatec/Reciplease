@@ -33,10 +33,10 @@ struct APIRecipe: Decodable {
     let image: URL
     let images: Images
     let url: URL
-    let yield: Double
+    let yield: Int
     let ingredientLines: [String]
     let ingredients: [RecipeIngredientResponse]
-    let totalTime: Double
+    let totalTime: Int
 }
 
 // MARK: - Ingredient

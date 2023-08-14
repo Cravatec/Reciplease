@@ -38,8 +38,8 @@ final class CoreDataRecipeStorage: RecipeStorageService {
                 let image = data.value(forKey: "image") as? String
                 let ingredientText = data.value(forKey: "ingredients") as! String
                 let ingredientImage = data.value(forKey: "ingredientImage") as! String
-                let like = data.value(forKey: "like") as? Double
-                let time = data.value(forKey: "time") as? Double
+                let like = data.value(forKey: "like") as? Int
+                let time = data.value(forKey: "time") as? Int
                 let url = data.value(forKey: "url") as? String
                 let imageUrl = URL(string: image ?? "")
                 let recipeUrl = URL(string: url ?? "")

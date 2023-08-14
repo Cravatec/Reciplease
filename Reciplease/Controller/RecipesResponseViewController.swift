@@ -55,8 +55,8 @@ extension RecipesResponseViewController: UITableViewDataSource {
             cell?.recipeImage.imageLoadingFromURL(url: url)
         }
         cell?.recipeTitleLabel.text = recipe.title!
-        cell!.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
-        cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
+        cell!.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!)) min"
+        cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!)) Like"
         cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
         setStatusFavorite(cell: cell, recipe: recipe)
         return cell ?? UITableViewCell()

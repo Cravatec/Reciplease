@@ -40,8 +40,8 @@ class RecipeViewController: UIViewController {
     func userInterface() {
         recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
         recipeTimeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
-        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!))"
-        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!))"
+        recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!)) min"
+        recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!)) Like"
         recipeTitleLabel?.text = selectedRecipe.title
         recipeImageView?.image = UIImage(named: "default_Image.jpg")
         if let url = selectedRecipe.image {

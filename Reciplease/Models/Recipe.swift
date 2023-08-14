@@ -14,8 +14,8 @@ struct Recipe {
     var title: String?
     var subtitle: String?
     var image: URL?
-    var like: Double?
-    var time: Double?
+    var like: Int?
+    var time: Int?
     var detailIngredients: String?
     var uri: String?
     var url: URL

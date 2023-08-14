@@ -44,8 +44,8 @@ class FavoriteRecipesTableViewController: UITableViewController {
             cell.recipeImage.imageLoadingFromURL(url: url)
         }
         cell.recipeTitleLabel.text = recipe.title
-        cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!))"
-        cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!))"
+        cell.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!)) min"
+        cell.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!)) Like"
         let favoriteImage = UIImage(systemName: "heart.fill")
         cell.favoriteButton.setImage(favoriteImage, for: .normal)
         cell.delegate = self
