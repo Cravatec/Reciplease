@@ -19,6 +19,8 @@ protocol RecipeStorageService {
 
 final class CoreDataRecipeStorage: RecipeStorageService {
     
+    static let shared = CoreDataRecipeStorage()
+    
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     lazy var context = appDelegate?.persistentContainer.viewContext
     
@@ -95,6 +97,19 @@ final class CoreDataRecipeStorage: RecipeStorageService {
             completion(.failure(error))
             print("Failed to fetch recipe from CoreData for deletion: \(error.localizedDescription)")
         }
+    }
+    
+    func isFavorite(recipeTitle: String) -> Bool {
+        var isFavorite: Bool
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CoreDataRecipe")
+        fetchRequest.predicate = NSPredicate(format: "title == %@", recipeTitle)
+        let recipeTitle = try? context?.fetch(fetchRequest)
+        if recipeTitle?.count ?? 1 > 0 {
+            isFavorite = true
+        } else {
+            isFavorite = false
+        }
+        return isFavorite
     }
 }
 

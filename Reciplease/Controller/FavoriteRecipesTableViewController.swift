@@ -59,12 +59,6 @@ class FavoriteRecipesTableViewController: UITableViewController {
         }
     }
     
-    func setStatusFavorite(cell:RecipeTableViewCell?, recipe:Recipe) {
-        let favoriteImage = UIImage(systemName: "heart.fill")
-        let notFavoriteImage = UIImage(systemName: "heart")
-        cell?.favoriteButton.setImage(recipe.isFavorite ? favoriteImage : notFavoriteImage, for: .normal)
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedRecipe = favoriteRecipes[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)

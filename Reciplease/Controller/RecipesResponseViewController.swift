@@ -29,7 +29,7 @@ class RecipesResponseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        recipesResponseTableView.reloadData()
+        reloadFavorites()
     }
     
     
@@ -58,14 +58,13 @@ extension RecipesResponseViewController: UITableViewDataSource {
         cell!.recipeTimeLabel.text = "🕐 \(String(describing: recipe.time!)) min"
         cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!)) Like"
         cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
-        setStatusFavorite(cell: cell, recipe: recipe)
+        guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: cell?.recipeTitleLabel.text ?? "")
+                else {
+            cell?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            return cell ?? UITableViewCell()
+                }
+        cell?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         return cell ?? UITableViewCell()
-    }
-    
-    func setStatusFavorite(cell:RecipeTableViewCell?, recipe:Recipe) {
-        let favoriteImage = UIImage(systemName: "heart.fill")
-        let notFavoriteImage = UIImage(systemName: "heart")
-        cell?.favoriteButton.setImage(recipe.isFavorite ? favoriteImage : notFavoriteImage, for: .normal)
     }
 }
 
@@ -90,18 +89,19 @@ extension RecipesResponseViewController: RecipeTableViewCellDelegate {
         
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
             var recipe = recipes[indexPath.row]
-            recipe.isFavorite = !recipe.isFavorite
-            service.save(recipe: recipe) { result in
-                switch result {
-                case .success:
-                    self.reloadFavorites()
-                    
-                case .failure(let error):
-                    print(error.localizedDescription)
+            guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: recipe.title!)
+            else {
+                cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                service.save(recipe: recipe) { result in
+                    recipesResponseTableView.reloadData()
                 }
+                return
             }
-            recipes[indexPath.row] = recipe
-            setStatusFavorite(cell: cell, recipe: recipe)
+            cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            service.delete(recipe) { result in
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+
+            }
         }
     }
     

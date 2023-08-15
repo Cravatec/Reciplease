@@ -20,6 +20,10 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var recipeIngredientTable: UITableView!
     @IBOutlet weak var recipeFavoriteButton: UIButton!
     
+    @IBAction func tapFavoriteButton(_ sender: Any) {
+        didTapFavoriteButton()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userInterface()
@@ -27,15 +31,13 @@ class RecipeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let favoriteImage = UIImage(systemName: "heart.fill")
-        let notFavoriteImage = UIImage(systemName: "heart")
-        recipeFavoriteButton.setImage(selectedRecipe.isFavorite ? favoriteImage : notFavoriteImage,
-                                      for: .normal)
     }
     
     @IBAction func getDirections(_ sender: Any) {
         UIApplication.shared.open(selectedRecipe.url)
     }
+    
+    
     
     func userInterface() {
         recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
@@ -46,6 +48,26 @@ class RecipeViewController: UIViewController {
         recipeImageView?.image = UIImage(named: "default_Image.jpg")
         if let url = selectedRecipe.image {
             recipeImageView.imageLoadingFromURL(url: url)
+        }
+        guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: selectedRecipe.title!)
+        else {
+            recipeFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            return
+        }
+        recipeFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+    }
+    
+    func didTapFavoriteButton() {
+        guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: selectedRecipe.title!)
+        else {
+            recipeFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            CoreDataRecipeStorage.shared.save(recipe: selectedRecipe) { result in
+            }
+            return
+        }
+        recipeFavoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        CoreDataRecipeStorage.shared.delete(selectedRecipe) { result in
+            recipeFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
 }

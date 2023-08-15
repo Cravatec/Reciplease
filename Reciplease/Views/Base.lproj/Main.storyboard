@@ -595,6 +595,7 @@
                                 </state>
                                 <connections>
                                     <action selector="favoriteAction:" destination="6vO-Lb-nlS" eventType="touchUpInside" id="rIe-ri-9hm"/>
+                                    <action selector="tapFavoriteButton:" destination="yYf-sR-hoI" eventType="touchUpInside" id="6Bk-qP-MBA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsp-W3-YxL" userLabel="Get Directions">
@@ -651,7 +652,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UYk-Ig-nju"/>
+        <segue reference="cTC-Td-Jdx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_Ingredients_Search.png" width="1458" height="1458"/>
