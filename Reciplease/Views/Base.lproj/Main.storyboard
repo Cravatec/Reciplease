@@ -196,26 +196,22 @@
                                             <rect key="frame" x="279" y="11" width="80" height="60"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="REK-fv-Bws" userLabel="Time Like Stack View">
-                                                    <rect key="frame" x="25.5" y="12" width="29" height="36"/>
+                                                    <rect key="frame" x="26" y="12.5" width="28" height="35"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOU-MU-lTq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="28" height="20.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20.5" id="017-A8-PX0"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
-                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <size key="shadowOffset" width="1" height="1"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBw-jq-3gE">
-                                                            <rect key="frame" x="0.0" y="20.5" width="29" height="15.5"/>
+                                                            <rect key="frame" x="0.0" y="20.5" width="28" height="14.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
-                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <size key="shadowOffset" width="1" height="1"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
@@ -251,7 +247,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0N-m9-3pW">
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -357,7 +353,7 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCe-CS-TR8">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -495,26 +491,22 @@
                                 <rect key="frame" x="285" y="74" width="80" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="42Y-ss-FkF" userLabel="Time Like Stack View">
-                                        <rect key="frame" x="25.5" y="12" width="29" height="36"/>
+                                        <rect key="frame" x="26" y="12.5" width="28" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bia-Mp-SCD">
-                                                <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="28" height="20.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20.5" id="Rik-no-sOb"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaQ-kV-cT9">
-                                                <rect key="frame" x="0.0" y="20.5" width="29" height="15.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="28" height="14.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                         </subviews>
                                     </stackView>
@@ -533,7 +525,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JhL-Mc-fDu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -659,7 +651,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cTC-Td-Jdx"/>
+        <segue reference="UYk-Ig-nju"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_Ingredients_Search.png" width="1458" height="1458"/>
