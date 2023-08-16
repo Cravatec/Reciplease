@@ -26,7 +26,10 @@ class FavoriteRecipesTableViewController: UITableViewController {
     private func configureNoFavoriteLabel() {
         if favoriteRecipes.isEmpty {
             noFavoriteLabel.isHidden = false
-            noFavoriteLabel.text = "No Favorites"
+            noFavoriteLabel.text = """
+You have no favorite yet,
+touch the ❤️ to add one
+"""
         } else {
             noFavoriteLabel.isHidden = true
         }
