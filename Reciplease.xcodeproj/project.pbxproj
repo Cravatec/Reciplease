@@ -157,7 +157,6 @@
 				226F5D6B28BA39F100F93534 /* Views */,
 				228465CD28BF6ED3004E2D18 /* Controller */,
 				226F5D6C28BA3A4300F93534 /* Application */,
-				226F5D6A28BA39CB00F93534 /* RecipesSearch */,
 				228465D928BF870A004E2D18 /* Services */,
 				226F5D3F28BA27E700F93534 /* Assets.xcassets */,
 				226F5D4428BA27E700F93534 /* Info.plist */,
@@ -196,13 +195,6 @@
 				22DFCD1028CA3B4400226E69 /* RecipeResponse.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		226F5D6A28BA39CB00F93534 /* RecipesSearch */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RecipesSearch;
 			sourceTree = "<group>";
 		};
 		226F5D6B28BA39F100F93534 /* Views */ = {
