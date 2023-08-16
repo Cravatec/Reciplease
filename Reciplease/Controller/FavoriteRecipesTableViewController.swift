@@ -9,9 +9,7 @@ import UIKit
 import CoreData
 
 class FavoriteRecipesTableViewController: UITableViewController {
-    
-    @IBOutlet var favoriteTableView: UITableView!
-    
+        
     private var storageService: RecipeStorageService = CoreDataRecipeStorage()
     
     private var selectedRecipe: Recipe?
@@ -89,7 +87,7 @@ extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
             case .success(let recipes):
                 DispatchQueue.main.async {
                     self?.favoriteRecipes = recipes
-                    self?.favoriteTableView.reloadData()
+                    self?.tableView.reloadData()
                 }
                 
             case .failure(let error):

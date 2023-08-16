@@ -295,7 +295,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorites" id="CE6-ny-bz5"/>
                     <connections>
-                        <outlet property="favoriteTableView" destination="keC-6T-3Uw" id="vE8-yb-x1g"/>
                         <segue destination="yYf-sR-hoI" kind="show" identifier="segueFavoriteToRecipe" id="UYk-Ig-nju"/>
                     </connections>
                 </tableViewController>
@@ -652,7 +651,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cTC-Td-Jdx"/>
+        <segue reference="UYk-Ig-nju"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Add_Ingredients_Search.png" width="1458" height="1458"/>
