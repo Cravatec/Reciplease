@@ -9,7 +9,9 @@ import UIKit
 import CoreData
 
 class FavoriteRecipesTableViewController: UITableViewController {
-        
+    
+    @IBOutlet weak var noFavoriteLabel: UILabel!
+    
     private var storageService: RecipeStorageService = CoreDataRecipeStorage()
     
     private var selectedRecipe: Recipe?
@@ -19,6 +21,15 @@ class FavoriteRecipesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadFavorites()
+    }
+    
+    private func configureNoFavoriteLabel() {
+        if favoriteRecipes.isEmpty {
+            noFavoriteLabel.isHidden = false
+            noFavoriteLabel.text = "No Favorites"
+        } else {
+            noFavoriteLabel.isHidden = true
+        }
     }
     
     // MARK: - Table view data source
@@ -92,6 +103,9 @@ extension FavoriteRecipesTableViewController: RecipeTableViewCellDelegate {
                 
             case .failure(let error):
                 print(error.localizedDescription)
+            }
+            DispatchQueue.main.async {
+                self?.configureNoFavoriteLabel()
             }
         }
     }
