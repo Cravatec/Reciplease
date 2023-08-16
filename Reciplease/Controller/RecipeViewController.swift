@@ -40,15 +40,15 @@ class RecipeViewController: UIViewController {
     
     
     func userInterface() {
+        recipeImageView?.image = UIImage(named: "default_Image.jpg")
+        if let url = selectedRecipe.image {
+            recipeImageView.imageLoadingFromURL(url: url)
+        }
         recipeImageView.makeCornerRounded(cornerRadius: 10, borderWidth: 0.25)
         recipeTimeLikeView.makeCornerRounded(cornerRadius: 30, borderWidth: 0.25)
         recipeTimeLabel?.text = "🕐 \(String(describing: selectedRecipe.time!)) min"
         recipeLikeLabel?.text = "❤️ \(String(describing: selectedRecipe.like!)) Like"
         recipeTitleLabel?.text = selectedRecipe.title
-        recipeImageView?.image = UIImage(named: "default_Image.jpg")
-        if let url = selectedRecipe.image {
-            recipeImageView.imageLoadingFromURL(url: url)
-        }
         guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: selectedRecipe.title!)
         else {
             recipeFavoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
