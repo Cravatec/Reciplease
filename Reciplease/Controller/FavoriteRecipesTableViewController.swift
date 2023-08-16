@@ -27,7 +27,7 @@ class FavoriteRecipesTableViewController: UITableViewController {
         if favoriteRecipes.isEmpty {
             noFavoriteLabel.isHidden = false
             noFavoriteLabel.text = """
-You don’t have a favorite yet,
+You don’t have any favorites yet,
 touch the ❤️ to add one
 """
         } else {
