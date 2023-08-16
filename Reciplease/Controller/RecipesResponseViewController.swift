@@ -88,7 +88,7 @@ extension RecipesResponseViewController: RecipeTableViewCellDelegate {
     func didTapFavoriteButton(cell: RecipeTableViewCell) {
         
         if let indexPath = recipesResponseTableView.indexPath(for: cell) {
-            var recipe = recipes[indexPath.row]
+            let recipe = recipes[indexPath.row]
             guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: recipe.title!)
             else {
                 cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
