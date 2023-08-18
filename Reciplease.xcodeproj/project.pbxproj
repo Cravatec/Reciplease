@@ -16,7 +16,6 @@
 		226F5D3B28BA27E400F93534 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F5D3928BA27E400F93534 /* Main.storyboard */; };
 		226F5D4028BA27E700F93534 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 226F5D3F28BA27E700F93534 /* Assets.xcassets */; };
 		226F5D4328BA27E700F93534 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 226F5D4128BA27E700F93534 /* LaunchScreen.storyboard */; };
-		226F5D4E28BA27E700F93534 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D4D28BA27E700F93534 /* RecipleaseTests.swift */; };
 		226F5D5828BA27E700F93534 /* RecipleaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D5728BA27E700F93534 /* RecipleaseUITests.swift */; };
 		226F5D5A28BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D5928BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift */; };
 		226F5D6E28BA3ADE00F93534 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F5D6D28BA3ADE00F93534 /* Recipe.swift */; };
@@ -69,7 +68,6 @@
 		226F5D4228BA27E700F93534 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		226F5D4428BA27E700F93534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		226F5D4928BA27E700F93534 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		226F5D4D28BA27E700F93534 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		226F5D5328BA27E700F93534 /* RecipleaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		226F5D5728BA27E700F93534 /* RecipleaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITests.swift; sourceTree = "<group>"; };
 		226F5D5928BA27E700F93534 /* RecipleaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			children = (
 				22898C522A7A652C003702C4 /* AlamoFireServiceMock.swift */,
 				2280B3DE2A7297EA002BE44A /* CoreDataStorageTests.swift */,
-				226F5D4D28BA27E700F93534 /* RecipleaseTests.swift */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -412,7 +409,6 @@
 			files = (
 				2280B3DF2A7297EA002BE44A /* CoreDataStorageTests.swift in Sources */,
 				22898C532A7A652C003702C4 /* AlamoFireServiceMock.swift in Sources */,
-				226F5D4E28BA27E700F93534 /* RecipleaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
