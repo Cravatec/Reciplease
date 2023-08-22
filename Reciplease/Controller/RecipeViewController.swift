@@ -26,11 +26,11 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userInterface()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        userInterface()
     }
     
     @IBAction func getDirections(_ sender: Any) {
