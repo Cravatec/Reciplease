@@ -24,7 +24,7 @@ final class CoreDataRecipeStorage: RecipeStorageService {
     private let appDelegate = UIApplication.shared.delegate as? AppDelegate
     lazy var context = appDelegate?.persistentContainer.viewContext
     
-    private enum StorageError: Error {
+    enum StorageError: Error {
         case notFound
     }
     
