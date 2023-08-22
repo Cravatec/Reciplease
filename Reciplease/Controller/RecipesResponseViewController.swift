@@ -59,10 +59,10 @@ extension RecipesResponseViewController: UITableViewDataSource {
         cell?.recipeNoteLabel.text  = "❤️ \(String(describing: recipe.like!)) Like"
         cell?.recipeIngredientsLabel.text = recipe.detailIngredients!
         guard CoreDataRecipeStorage.shared.isFavorite(recipeTitle: cell?.recipeTitleLabel.text ?? "")
-                else {
+        else {
             cell?.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
             return cell ?? UITableViewCell()
-                }
+        }
         cell?.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         return cell ?? UITableViewCell()
     }
@@ -99,8 +99,8 @@ extension RecipesResponseViewController: RecipeTableViewCellDelegate {
             }
             cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             service.delete(recipe) { result in
-                    cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
-
+                cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                
             }
         }
     }

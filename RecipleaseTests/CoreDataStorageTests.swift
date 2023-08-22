@@ -9,7 +9,7 @@ import XCTest
 import CoreData
 @testable import Reciplease
 
-class MockRecipeStorageServiceTests: XCTestCase {
+class CoreDataStorageTests: XCTestCase {
     
     var mockStorageService: MockRecipeStorageService!
     
@@ -37,7 +37,6 @@ class MockRecipeStorageServiceTests: XCTestCase {
                 XCTFail("Failed to save recipe: \(error)")
             }
         }
-        
         wait(for: [expectation], timeout: 5.0)
     }
     
@@ -75,7 +74,6 @@ class MockRecipeStorageServiceTests: XCTestCase {
                 XCTFail("Failed to delete recipe: \(error)")
             }
         }
-        
         wait(for: [expectation], timeout: 5.0)
     }
     
@@ -93,7 +91,6 @@ class MockRecipeStorageServiceTests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        
         wait(for: [expectation], timeout: 5.0)
     }
     
@@ -112,7 +109,7 @@ class MockRecipeStorageServiceTests: XCTestCase {
         wait(for: [expectation], timeout: 5.0)
     }
     
-    // Create a sample recipe for testing
+    //MARK: - Create a sample recipe for testing
     private func createTestRecipe() -> Recipe {
         let recipe = Recipe(
             title: "Test Recipe",

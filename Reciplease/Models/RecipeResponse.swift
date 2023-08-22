@@ -51,7 +51,7 @@ struct RecipeIngredientResponse: Decodable {
 struct Images: Decodable {
     let thumbnail, small, regular: Large
     let large: Large?
-
+    
     enum CodingKeys: String, CodingKey {
         case thumbnail = "THUMBNAIL"
         case small = "SMALL"
@@ -74,7 +74,7 @@ struct RecipeDataModel: Decodable {
     let executionTime: String
     let note: Double
     let instructions: String
-
+    
     enum CodingKeys: CodingKey {
         case title
         case imageURL

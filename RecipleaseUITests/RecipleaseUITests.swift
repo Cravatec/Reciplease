@@ -12,7 +12,7 @@ class RecipleaseUITests: XCTestCase {
     
     override func setUpWithError() throws {
         app.launch()
-
+        
         continueAfterFailure = false
         
         XCUIDevice.shared.orientation = .portrait

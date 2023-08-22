@@ -11,7 +11,7 @@ import Alamofire
 @testable import Reciplease
 
 class AlamoFireServiceTests: XCTestCase {
-
+    
     func testGetRecipesSuccess() {
         let expectation = self.expectation(description: "Get Recipes")
         AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken") { result in
@@ -25,7 +25,7 @@ class AlamoFireServiceTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
-
+    
     func testGetRecipesWithMultipleIngredients() {
         let expectation = self.expectation(description: "Get Recipes")
         AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken", "rice", "lemon") { result in

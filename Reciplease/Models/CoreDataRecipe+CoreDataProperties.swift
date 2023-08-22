@@ -11,11 +11,11 @@ import CoreData
 
 
 extension CoreDataRecipe {
-
+    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<CoreDataRecipe> {
         return NSFetchRequest<CoreDataRecipe>(entityName: "CoreDataRecipe")
     }
-
+    
     @NSManaged public var title: String?
     @NSManaged public var time: Double
     @NSManaged public var like: Double
@@ -23,9 +23,9 @@ extension CoreDataRecipe {
     @NSManaged public var ingredients: String?
     @NSManaged public var ingredientImage: String?
     @NSManaged public var url: String?
-
+    
 }
 
 extension CoreDataRecipe : Identifiable {
-
+    
 }
