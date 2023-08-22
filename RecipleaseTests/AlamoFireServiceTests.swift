@@ -1,5 +1,5 @@
 //
-//  AlamoFireServiceMock.swift
+//  AlamoFireServiceTests.swift
 //  RecipleaseTests
 //
 //  Created by Sam on 02/08/2023.
@@ -7,13 +7,14 @@
 
 import Foundation
 import XCTest
+import Alamofire
 @testable import Reciplease
 
-class AlamoFireServiceMock: XCTestCase {
+class AlamoFireServiceTests: XCTestCase {
 
     func testGetRecipesSuccess() {
         let expectation = self.expectation(description: "Get Recipes")
-        AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken", "rice") { result in
+        AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken") { result in
             switch result {
             case .success(let recipes):
                 XCTAssertFalse(recipes.isEmpty)
@@ -27,7 +28,7 @@ class AlamoFireServiceMock: XCTestCase {
 
     func testGetRecipesWithMultipleIngredients() {
         let expectation = self.expectation(description: "Get Recipes")
-        AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken", "rice", "peas") { result in
+        AlamoFireFetchingRecipes.getRecipes(ingredients: "chicken", "rice", "lemon") { result in
             switch result {
             case .success(let recipes):
                 XCTAssertFalse(recipes.isEmpty)
@@ -66,5 +67,4 @@ class AlamoFireServiceMock: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
-    
 }
